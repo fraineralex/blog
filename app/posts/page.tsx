@@ -1,10 +1,11 @@
-import Navbar from './components/navbar'
-import Footer from './components/footer/footer'
-import HomeHeader from './components/home-header'
-import ArticleCard from './components/article-card'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer/footer'
+import HomeHeader from '../components/home-header'
+import ArticleCard from '../components/article-card'
 
 export default function Home () {
-  const title = 'Top Articles'
+  const title = 'All Articles'
+  const subtitle = 'A collection of 9 articles of software development'
 
   const examplePost = {
     title: 'Manage your Node.js versions with NVM',
@@ -20,7 +21,7 @@ export default function Home () {
       <Navbar />
       <main className='py-12 lg:py-20'>
         <article className='max-w-6xl mx-auto px-3'>
-          <HomeHeader title={title} />
+          <HomeHeader title={title} subtitle={subtitle} />
           <section
             className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8'
             data-test='articles-section'
@@ -38,11 +39,7 @@ export default function Home () {
         </article>
       </main>
 
-      <section className='flex space-x-8 justify-center text-xl pt-8 font-bold'>
-        <a href='/posts' className='mr-8' data-test='see-all-link'>
-          See All<span className='squiggle'>&rarr;</span>
-        </a>
-      </section>
+      <section className='flex space-x-8 justify-center text-xl pt-8 font-bold'></section>
       <Footer />
     </>
   )

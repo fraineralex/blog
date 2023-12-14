@@ -102,7 +102,7 @@ const config: Config = {
         'hot-pink': '#fd2d78'
       },
       fontFamily: {
-        display: ['Londrina Solid', 'sans-serif'],
+        display: ['"Londrina Solid"', 'sans-serif'],
         body: ['Poppins', 'sans-serif']
       },
       fontSize: {
