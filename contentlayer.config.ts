@@ -6,15 +6,15 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
-	path: {
-		type: "string",
-		resolve: (doc: any) => `/${doc._raw.flattenedPath}`,
-	},
-	slug: {
-		type: "string",
-		resolve: (doc: any) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-	},
-};
+  path: {
+    type: 'string',
+    resolve: (doc: any) => `/${doc._raw.flattenedPath}`
+  },
+  slug: {
+    type: 'string',
+    resolve: (doc: any) => doc._raw.flattenedPath.split('/').slice(1).join('/')
+  }
+}
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -23,7 +23,7 @@ export const Post = defineDocumentType(() => ({
 
   fields: {
     published: {
-      type: 'boolean'
+      type: 'string'
     },
     title: {
       type: 'string',
@@ -34,8 +34,7 @@ export const Post = defineDocumentType(() => ({
       required: true
     },
     pubDate: {
-      type: 'date',
-      required: true
+      type: 'date'
     },
     slug: {
       type: 'string',
@@ -73,8 +72,7 @@ export const Page = defineDocumentType(() => ({
       required: true
     },
     pubDate: {
-      type: 'date',
-      required: true
+      type: 'date'
     }
   }
 }))
@@ -91,8 +89,6 @@ export default makeSource({
         {
           theme: 'github-dark',
           onVisitLine (node: any) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
             if (node.children.length === 0) {
               node.children = [{ type: 'text', value: ' ' }]
             }

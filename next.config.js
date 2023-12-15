@@ -4,11 +4,14 @@ const path = require('path')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'],
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  reactStrictMode: true, swcMinify: true
+  reactStrictMode: true, swcMinify: true,
+  experimental: {
+		mdxRs: true,
+	},
 }
 
 module.exports = withContentlayer(nextConfig)
