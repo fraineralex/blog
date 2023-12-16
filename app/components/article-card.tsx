@@ -11,7 +11,7 @@ export default function ArticleCard ({ post }: Props) {
   return (
     <>
       <Link
-        href={post.slug}
+        href={`/${post.slug}`}
         className='transition-all duration-75 ease-in-out h-full block relative top-0 hover:-top-2 shadow-lg hover:shadow-xl bg-white rounded-xl overflow-hidden'
         data-test='article-card'
       >
