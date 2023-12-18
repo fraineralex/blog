@@ -8,10 +8,10 @@ const config: Config = {
   ],
   important: true,
   theme: {
-    borderColor: theme => ({
+    /*     borderColor: theme => ({
       ...theme('colors'),
       default: theme('colors.black', 'currentColor')
-    }),
+    }), */
     rotate: {
       '-180': '-180deg',
       '-90': '-90deg',
@@ -87,12 +87,12 @@ const config: Config = {
       132: '34rem',
       140: '36rem'
     },
-    inset: (theme, { negative }) => ({
+    /* inset: (theme, { negative }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing')),
       0: '0',
       auto: 'auto'
-    }),
+    }), */
     extend: {
       borderRadius: {
         xl: '.75rem'
