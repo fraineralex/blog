@@ -16,7 +16,7 @@ export default function ArticleCard ({ post }: Props) {
         data-test='article-card'
       >
         <Image
-          style={{ width: '100%', aspectRatio: 15 / 7, objectFit: 'cover' }}
+          style={{ width: '100%', aspectRatio: '15 / 7', objectFit: 'cover' }}
           className='squiggle'
           src={post.hero}
           alt={post.title}

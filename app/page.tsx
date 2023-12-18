@@ -9,6 +9,7 @@ export const revalidate = 60
 
 export default function Home () {
   const topPosts = allPosts
+    .filter(post => post.published)
     .sort(
       (a: Post, b: Post) =>
         new Date(b.pubDate ?? Number.POSITIVE_INFINITY).valueOf() -
