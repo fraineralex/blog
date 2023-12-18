@@ -6,9 +6,9 @@ export const Post = defineDocumentType(() => ({
   contentType: 'mdx',
 
   fields: {
-    published: {
-      type: 'string'
-    },
+		published: {
+			type: "boolean",
+		},
     title: {
       type: 'string',
       required: true
