@@ -32,12 +32,12 @@ export const Navigation: React.FC = () => {
             <SearchPosts />
           </div>
 
-          <Link
+          {/* <Link
             href='/'
             className='duration-200 text-zinc-300 hover:text-zinc-100'
           >
             <ArrowLeft className='w-6 h-6 ' />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </header>
