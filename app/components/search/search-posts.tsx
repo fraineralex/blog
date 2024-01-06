@@ -27,7 +27,7 @@ export function SearchPosts ({ className }: { className?: string }) {
           <input
             autoFocus
             type='text'
-            className='w-full placeholder-slate-500 bg-transparent border outline-none disabled:bg-slate-50 text-white border-slate-500 focus:bg-slate-900 focus:border-hot-pink rounded-full px-6 py-3'
+            className='w-full placeholder-slate-500 bg-transparent border outline-none disabled:bg-slate-50 text-white border-slate-500 focus:bg-slate-900/50 focus:border-slate-400 rounded-full px-6 py-3'
             placeholder='Start typing to search'
             onChange={e => setSearchTerm(e.target.value)}
           />

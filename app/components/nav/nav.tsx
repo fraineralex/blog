@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import { SearchPosts } from '../search/search-posts'
+import { ProfileLink } from './profile-link'
 
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null)
@@ -38,6 +39,7 @@ export const Navigation: React.FC = () => {
           >
             <ArrowLeft className='w-6 h-6 ' />
           </Link> */}
+          <ProfileLink />
         </div>
       </div>
     </header>

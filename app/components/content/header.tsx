@@ -61,7 +61,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
         }`}
       >
         <div className='container flex flex-row-reverse items-center justify-between p-6 mx-auto'>
-          <div className='flex justify-between gap-8 pr-2'>
+          <div className='flex justify-between gap-6 pr-2'>
             <span
               title='View counter for this page'
               className={`duration-200 hover:font-medium flex items-center gap-1 ${
