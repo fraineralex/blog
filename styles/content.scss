@@ -1,0 +1,130 @@
+.content {
+  h1 {
+    @apply uppercase font-bold leading-none font-londrina text-white;
+
+    font-size: min(max(3rem, 6.25vw), 7rem);
+
+    @supports (font-size: clamp(3rem, 6.25vw, 7rem)) {
+      font-size: clamp(3rem, 6.25vw, 7rem);
+    }
+  }
+
+  h2 {
+    @apply mt-10 scroll-m-20 border-b border-b-zinc-300 pb-1 text-3xl font-semibold tracking-tight first:mt-0 font-calsans text-white;
+  }
+
+  h3 {
+    @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight text-zinc-100;
+  }
+
+  h4 {
+    @apply mt-8 scroll-m-20 text-xl font-semibold tracking-tight text-zinc-100;
+  }
+
+  h5 {
+    @apply mt-8 scroll-m-20 text-lg font-semibold tracking-tight text-zinc-100;
+  }
+
+  h6 {
+    @apply mt-8 scroll-m-20 text-base font-semibold tracking-tight text-zinc-100;
+  }
+
+  a {
+    @apply font-bold text-hot-pink underline underline-offset-4 hover:text-white;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  p:not(:first-child) {
+    @apply mt-6;
+  }
+
+  ul {
+    @apply my-6 ml-6 list-disc pl-5;
+  }
+
+  ol {
+    @apply my-6 ml-6 list-decimal;
+  }
+
+  li {
+    @apply mt-2;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 border-zinc-300 pl-6 italic text-zinc-800;
+  }
+
+  blockquote > * {
+    @apply text-zinc-600;
+  }
+
+  img {
+    @apply rounded-md border border-transparent;
+  }
+
+  hr {
+    @apply my-4 border-zinc-800 md:my-8;
+  }
+
+  table {
+    @apply w-full;
+  }
+
+  tr {
+    @apply m-0 border-t border-zinc-800 p-0 even:bg-zinc-700;
+  }
+
+  th {
+    @apply border border-zinc-800 px-4 py-2 text-left font-bold;
+  }
+
+  th[align=center] {
+    @apply text-center;
+  }
+
+  th[align=right] {
+    @apply text-right;
+  }
+
+  td {
+    @apply border border-zinc-800 px-4 py-2 text-left;
+  }
+
+  td[align=center] {
+    @apply text-center;
+  }
+
+  td[align=right] {
+    @apply text-right;
+  }
+
+  pre {
+    @apply mt-6 mb-4 overflow-x-auto rounded-lg bg-zinc-900 py-4 px-4;
+  }
+
+  code {
+    @apply relative rounded bg-zinc-700 bg-opacity-25 py-[0.2rem] px-[0.3rem] font-mono text-sm text-zinc-100 font-semibold;
+  }
+
+  strong {
+    @apply font-bold text-zinc-200;
+  }
+}
+
+.content section>*:first-child {
+  @apply mt-0 pt-0;
+}
+
+
+.personality-formal .content {
+  h1 {
+    @apply text-white normal-case;
+  }
+
+  >p {
+    @apply leading-normal;
+  }
+} 
