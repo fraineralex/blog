@@ -1,11 +1,12 @@
 import mailchimp from '@mailchimp/mailchimp_marketing'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,
   server: process.env.MAILCHIMP_API_SERVER
 })
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body
 
   if (!email) {
@@ -13,13 +14,13 @@ export default async (req, res) => {
   }
 
   try {
-    await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
+    await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID!, {
       email_address: email,
       status: 'subscribed'
     })
 
     return res.status(201).json({ error: '' })
-  } catch (error) {
+  } catch (error: any) {
     return res.status(500).json({ error: error.message || error.toString() })
   }
 }

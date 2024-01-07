@@ -79,6 +79,9 @@ devDependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.3)
+  '@types/mailchimp__mailchimp_marketing':
+    specifier: ^3.0.17
+    version: 3.0.17
   '@types/node':
     specifier: ^20.8.4
     version: 20.8.4
@@ -1082,6 +1085,10 @@ packages:
     dependencies:
       '@types/unist': 3.0.0
     dev: false
+
+  /@types/mailchimp__mailchimp_marketing@3.0.17:
+    resolution: {integrity: sha512-j0rZvpHMhIBzzvvnc4aPeqffgN1enw7gSthEX6Bc9I+GLhuSiU07TCuftbL4FhMqRvSxFSWn9OhHGDtV5z6UCg==}
+    dev: true
 
   /@types/mdast@3.0.13:
     resolution: {integrity: sha512-HjiGiWedR0DVFkeNljpa6Lv4/IZU1+30VY5d747K7lBudFc3R0Ibr6yJ9lN3BE28VnZyDfLF/VB1Ql1ZIbKrmg==}
