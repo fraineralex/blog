@@ -9,6 +9,7 @@
     "fmt": "pnpm rome check . --apply-unsafe && pnpm rome format . --write"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next/mdx": "^14.0.4",
     "@upstash/redis": "^1.23.3",
     "contentlayer": "^0.3.4",

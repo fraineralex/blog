@@ -6,10 +6,28 @@ import { NewsLetterAlert } from './newsletter-alert'
 export default function Subscribe () {
   const [alert, setAlert] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const email = formData.get('email')
+    const res = await fetch('/api/subscribe', {
+      body: JSON.stringify({
+        email: email
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST'
+    })
+
+    const { error } = await res.json()
+
+    if (error) {
+      console.log(error)
+      setAlert(true)
+
+      return
+    }
     setAlert(true)
     // wait for 5 seconds
     setTimeout(() => {
