@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'development') {
 export async function GET () {
   const site_url =
     process.env.NODE_ENV === 'production'
-      ? 'https://fraineralex.com/blog'
+      ? 'https://frainer-blog.vercel.app/'
       : 'http://localhost:3000'
 
   const feed = new RSS({
@@ -24,7 +24,7 @@ export async function GET () {
     description:
       "Recent content on Frainer's Blog | Web development, Programming, and Computer Science",
     site_url: site_url,
-    feed_url: `${site_url}/rss.xml`,
+    feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/images/og.png`,
     pubDate: new Date(),
     language: 'en-US'
