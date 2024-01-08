@@ -10,7 +10,7 @@ export default function Subscribe () {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
     const email = formData.get('email')
-    const res = await fetch('/api/subscribe', {
+    /* const res = await fetch('/api/subscribe', {
       body: JSON.stringify({
         email: email
       }),
@@ -27,7 +27,8 @@ export default function Subscribe () {
       setAlert(true)
 
       return
-    }
+    } */
+
     setAlert(true)
     // wait for 5 seconds
     setTimeout(() => {

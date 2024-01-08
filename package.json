@@ -11,6 +11,7 @@
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@next/mdx": "^14.0.4",
+    "@types/rss": "^0.0.32",
     "@upstash/redis": "^1.23.3",
     "contentlayer": "^0.3.4",
     "framer-motion": "^10.16.4",
@@ -25,6 +26,7 @@
     "rehype-pretty-code": "^0.10.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "3.0.1",
+    "rss": "^1.2.2",
     "sass": "^1.69.6",
     "typescript": "^5.2.2"
   },

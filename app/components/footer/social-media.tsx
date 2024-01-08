@@ -123,7 +123,7 @@ export default function SocialMedia () {
           </g>
         </svg>
       </Link>
-      <Link href='/rss' className='ml-4' aria-label='Rss' rel='noopener'>
+      <Link href='/feed.xml' className='ml-4' target='_blank' aria-label='Rss' rel='noopener'>
         <Rss className='h-6 w-6 text-zinc-100 hover:text-hot-pink' />
       </Link>
     </div>
