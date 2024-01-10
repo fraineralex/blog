@@ -1,15 +1,9 @@
 'use client'
-import {
-  ArrowLeft,
-  Eye,
-  Github,
-  Twitter,
-  Instagram,
-  Share2
-} from 'lucide-react'
+import { ArrowLeft, Eye, Share2 } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import { SearchPosts } from '../search/search-posts'
+import { ProfileLink } from '../nav/profile-link'
 
 type Props = {
   post: {
@@ -82,7 +76,7 @@ export const Header: React.FC<Props> = ({ post, views }) => {
                   : 'text-zinc-600 hover:text-zinc-400'
               } `}
             />
-            <button>
+            {/* <button>
               <Share2
                 className={`w-6 h-6 duration-200 hover:font-medium ${
                   isIntersecting
@@ -90,10 +84,10 @@ export const Header: React.FC<Props> = ({ post, views }) => {
                     : 'text-zinc-600 hover:text-zinc-400'
                 } `}
               />
-            </button>
+            </button> */}
           </div>
 
-          <Link
+          {/* <Link
             href='/'
             className={`duration-200 hover:font-medium ${
               isIntersecting
@@ -102,7 +96,12 @@ export const Header: React.FC<Props> = ({ post, views }) => {
             } `}
           >
             <ArrowLeft className='w-6 h-6 ' />
-          </Link>
+          </Link> */}
+          <ProfileLink
+            className={
+              isIntersecting ? '' : 'text-zinc-600 hover:text-zinc-400'
+            }
+          />
         </div>
       </div>
     </header>

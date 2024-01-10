@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Frainer's Blog",
     description: 'Some of my thoughts on software, technology, and life.',
-    url: 'https://fraineralex/blog.com',
+    url: 'https://frainer-blog.vercel.app',
     siteName: 'fraineralex.com',
     images: [
       {
-        url: 'https://fraineralex.com/blog/og.png',
+        url: 'https://frainer-blog.vercel.app/og.png',
         width: 1920,
         height: 1080
       }

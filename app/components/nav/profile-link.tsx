@@ -1,10 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function ProfileLink () {
+export function ProfileLink ({ className }: { className?: string }) {
   return (
-    <article className='hidden md:block pl-5'>
-      <h2 className='blog-title text-lg md:text-lg text-left break-words font-heading font-semibold leading-normal md:font-bold text-zinc-400 font-calsans hover:text-zinc-100'>
+    <article className='hidden md:block pl-5 group'>
+      <h2
+        className={`blog-title text-lg md:text-lg text-left break-words font-heading font-semibold leading-normal md:font-bold font-calsans ${
+          className ? className : 'text-zinc-400  hover:text-zinc-100'
+        }`}
+      >
         <Link
           href='/'
           className='focus-ring-base flex flex-row items-center focus-ring-colors-light-header'
@@ -62,6 +66,11 @@ export function ProfileLink () {
               </span>
               <Image
                 alt="Frainer's blog home page"
+                className={`${
+                  className
+                    ? 'opacity-70 group-hover:opacity-90'
+                    : 'opacity-90 group-hover:opacity-100'
+                }`}
                 src='/images/profile.jpg'
                 decoding='async'
                 data-nimg='intrinsic'

@@ -6,6 +6,7 @@ import { Redis } from '@upstash/redis'
 import { Eye } from 'lucide-react'
 import Image from 'next/image'
 import { Post } from 'contentlayer/generated'
+import { AllTags } from './components/tags/all-tags'
 
 let allPosts: Array<Post>
 
@@ -187,6 +188,7 @@ export default async function BlogPage () {
               ))}
           </div>
         </div>
+        <AllTags />
       </div>
     </div>
   )
