@@ -73,5 +73,12 @@ export const allTags = [
     label: 'Experience',
     image: '/images/tags/personal.png',
     description: 'Personal Experience'
+  },
+  {
+    name: 'go',
+    label: 'Go',
+    image: '/images/tags/go.png',
+    description:
+      'Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.'
   }
 ]
