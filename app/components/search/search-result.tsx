@@ -17,7 +17,7 @@ export const SearchResult = ({ searchTerm }: { searchTerm: string }) => {
   const filteredPosts = allPosts.filter(post => {
     const title = post.title.toLowerCase()
     const description = post.description.toLowerCase()
-    const tags = post.tags?.map(tag => tag.label.toLowerCase())
+    const tags = post.tags?.map(tag => tag.toLowerCase())
     const body = post.body.code?.toLowerCase()
     const search = searchTerm.toLowerCase()
 
