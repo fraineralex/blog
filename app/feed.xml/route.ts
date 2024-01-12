@@ -36,7 +36,7 @@ export async function GET () {
       url: `${site_url}/${post.slug}`,
       date: post.date,
       description: post.description,
-      categories: post.tags?.map(({ label }) => label) || [],
+      categories: post.tags?.map(tag => tag) || [],
       guid: post.slug,
       author: 'Frainer Encarnación'
     })
