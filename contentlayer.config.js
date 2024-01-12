@@ -58,12 +58,7 @@ export const Post = defineDocumentType(() => ({
     tags: {
       type: 'list',
       of: {
-        type: 'json',
-				properties: {
-					label: { type: 'string' },
-					value: { type: 'string' },
-				}
-				
+        type: 'string'
       }
     }
 	},

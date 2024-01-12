@@ -15,7 +15,7 @@ export default function SocialMedia () {
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
           fill='currentColor'
-          className='h-6 w-6 text-zinc-100 hover:text-hot-pink'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
           aria-hidden='true'
         >
           <path d='M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z'></path>
@@ -28,13 +28,13 @@ export default function SocialMedia () {
         aria-label='Instagram'
         rel='noopener'
       >
-        <Instagram className='h-6 w-6 text-zinc-100 hover:text-hot-pink' />
+        <Instagram className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110' />
       </Link>
-      <Link href='#' className='ml-4' aria-label='Twitter' rel='noopener'>
+      <Link href='https://twitter.com/fraineralex' className='ml-4' aria-label='Twitter' rel='noopener'>
         <svg
           viewBox='0 0 24 24'
           fill='currentColor'
-          className='h-6 w-6 text-zinc-100 hover:text-hot-pink'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
           aria-hidden='true'
         >
           <g>
@@ -50,7 +50,7 @@ export default function SocialMedia () {
         rel='noopener'
       >
         <svg
-          className='h-6 w-6 text-zinc-100 hover:text-hot-pink'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
           xmlns='http://www.w3.org/2000/svg'
           version='1.1'
           xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -78,7 +78,7 @@ export default function SocialMedia () {
         rel='noopener'
       >
         <svg
-          className='h-6 w-6 text-zinc-100 hover:text-hot-pink'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
           xmlns='http://www.w3.org/2000/svg'
           version='1.1'
           xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -123,8 +123,14 @@ export default function SocialMedia () {
           </g>
         </svg>
       </Link>
-      <Link href='/feed.xml' className='ml-4' target='_blank' aria-label='Rss' rel='noopener'>
-        <Rss className='h-6 w-6 text-zinc-100 hover:text-hot-pink' />
+      <Link
+        href='/feed.xml'
+        className='ml-4'
+        target='_blank'
+        aria-label='Rss'
+        rel='noopener'
+      >
+        <Rss className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110' />
       </Link>
     </div>
   )

@@ -51,7 +51,7 @@ export default async function BlogPage () {
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
     )
 
-  sorted.push(featured, top2, top3, featured)
+  sorted.push(featured)
 
   const thereAreFourPosts = allPosts.length >= 4
 

@@ -9,6 +9,7 @@ import { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import Subscribe from '../components/footer/subscribe'
 import { Post } from 'contentlayer/generated'
+import { allTags } from '@/util/data'
 
 let allPosts: Array<Post>
 
@@ -23,14 +24,13 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export const revalidate = 60
+const redis = Redis.fromEnv()
 
 type Props = {
   params: {
     slug: string
   }
 }
-
-const redis = Redis.fromEnv()
 
 export async function generateStaticParams (): Promise<Props['params'][]> {
   return allPosts
@@ -113,19 +113,22 @@ export default async function PostPage ({ params }: Props) {
           <span className='hidden px-4 sm:block'>|</span>
           <div className='flex flex-wrap'>
             {post.tags &&
-              post.tags.map((tag, index) => (
-                <div key={index}>
-                  <Link
-                    href={`/tags/${tag.value}`}
-                    className='text-hot-pink font-bold underline underline-offset-4 py-3 px-1 hover:text-white'
-                  >
-                    {tag.label}
-                  </Link>
-                  {index !== (post.tags?.length ?? 0) - 1 && (
-                    <span className='px-1'>•</span>
-                  )}
-                </div>
-              ))}
+              post.tags.map((tagName, index) => {
+                const tag = allTags.find(tag => tag.name === tagName)
+                return (
+                  <div key={index}>
+                    <Link
+                      href={`/tags/${tag?.name}`}
+                      className='text-hot-pink font-bold underline underline-offset-4 py-3 px-1 hover:text-white'
+                    >
+                      {tag?.label}
+                    </Link>
+                    {index !== (post.tags?.length ?? 0) - 1 && (
+                      <span className='px-1'>•</span>
+                    )}
+                  </div>
+                )
+              })}
           </div>
         </small>
 

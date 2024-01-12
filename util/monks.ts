@@ -20,10 +20,7 @@ export const allPostsDev: Array<Post> = [
       flattenedPath: 'posts/installing-go-on-a-mac'
     },
     path: '/installing-go-on-a-mac',
-    tags: [
-      { label: 'Terminal', value: 'terminal' },
-      { label: 'Go', value: 'go' }
-    ],
+    tags: ['terminal', 'go'],
     readTime: '5',
     updated: undefined,
     body: {

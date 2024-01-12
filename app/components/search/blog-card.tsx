@@ -1,4 +1,5 @@
 import { Post } from '@/.contentlayer/generated'
+import { allTags } from '@/util/data'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -41,19 +42,22 @@ export function BlogCard ({ blog }: Props) {
             <span className='hidden px-4 sm:block'>|</span>
             <div className='flex flex-wrap'>
               {blog.tags &&
-                blog.tags.map((tag, index) => (
-                  <div key={index}>
-                    <Link
-                      href={`/tags/${tag.value}`}
-                      className='text-hot-pink font-bold underline underline-offset-4 py-3 px-1 hover:text-white'
-                    >
-                      {tag.label}
-                    </Link>
-                    {index !== (blog.tags?.length ?? 0) - 1 && (
-                      <span className='px-1'>•</span>
-                    )}
-                  </div>
-                ))}
+                blog.tags.map((tagName, index) => {
+                  const tag = allTags.find(tag => tag.name === tagName)
+                  return (
+                    <div key={index}>
+                      <Link
+                        href={`/tags/${tag?.name}`}
+                        className='text-hot-pink font-bold underline underline-offset-4 py-3 px-1 hover:text-white'
+                      >
+                        {tag?.label}
+                      </Link>
+                      {index !== (blog.tags?.length ?? 0) - 1 && (
+                        <span className='px-1'>•</span>
+                      )}
+                    </div>
+                  )
+                })}
             </div>
           </small>
         </div>

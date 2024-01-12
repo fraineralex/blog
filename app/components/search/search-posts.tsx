@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 import { SearchResult } from './search-result'
 import { Modal } from './search-modal'
+import { displayTags } from '@/util/data'
+import Link from 'next/link'
 
 export function SearchPosts ({ className }: { className?: string }) {
   const [open, setOpen] = useState(false)
@@ -17,7 +19,7 @@ export function SearchPosts ({ className }: { className?: string }) {
         <Search
           className={`${
             className ||
-            'h-6 w-6 text-slate-100 hover:text-hot-pink hover:scale-110'
+            'h-6 w-6 text-slate-400 hover:text-slate-100 hover:scale-110'
           }`}
         />
       </button>
@@ -32,6 +34,24 @@ export function SearchPosts ({ className }: { className?: string }) {
             onChange={e => setSearchTerm(e.target.value)}
           />
         </div>
+        <small className='mb-4 text-slate-400 flex flex-col sm:flex-row text-center'>
+          <div className='flex flex-wrap'>
+            {displayTags &&
+              displayTags.map((tag, index) => (
+                <div key={index}>
+                  <Link
+                    href={`/tags/${tag.name}`}
+                    className='text-slate-400 font-bold underline underline-offset-4 py-3 px-1 hover:text-slate-200'
+                  >
+                    {tag.label}
+                  </Link>
+                  {index !== (displayTags?.length ?? 0) - 1 && (
+                    <span className='px-1'>•</span>
+                  )}
+                </div>
+              ))}
+          </div>
+        </small>
         <div className='relative w-full'>
           {!searchTerm && (
             <div className='my-4 flex flex-row items-center justify-center text-slate-300'>
