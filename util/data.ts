@@ -4,81 +4,95 @@ export const displayTags = [
     label: 'JavaScript',
     image: '/images/tags/javascript.png',
     description:
-      'JavaScript is a lightweight, interpreted programming language.'
+      'Javascript is a programming language. Although at first it was designed to provide interactivity to web pages, today its use has extended to the server (with Node.js) or native applications.'
   },
   {
     name: 'react',
     label: 'React',
     image: '/images/tags/react.svg',
-    description: 'React is a JavaScript library for building user interfaces.'
+    description:
+      'React is an open source library created by Facebook for creating user interfaces.'
   },
   {
     name: 'nodejs',
     label: 'Node.js',
     image: '/images/tags/node.png',
     description:
-      "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine."
+      'Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. It allows developers to use JavaScript to write command line tools and for server-side scripting—running scripts server-side.'
   },
   {
     name: 'nextjs',
     label: 'Next.js',
     image: '/images/tags/next.ico',
-    description: 'Next.js is a React framework for production.'
+    description:
+      'Next.js is an open-source React front-end development web framework that enables functionality such as server-side rendering and generating static websites for React based web applications.'
   },
   {
     name: 'python',
     label: 'Python',
     image: '/images/tags/python.png',
     description:
-      'Python is an interpreted, high-level and general-purpose programming language.'
+      "Python is a high-level, interpreted programming language with dynamic semantics. It's known for its simple, easy-to-read syntax which emphasizes readability and reduces the cost of program maintenance."
   },
   {
     name: 'odoo',
     label: 'Odoo',
     image: '/images/tags/odoo.ico',
     description:
-      'Odoo is an all-in-one management software that offers a range of business applications.'
+      'Odoo is a suite of open source business apps that cover all your company needs: CRM, eCommerce, accounting, inventory, point of sale, project management, etc.'
   },
   {
     name: 'css',
     label: 'CSS',
     image: '/images/tags/css.png',
-    description: 'CSS, Sass, Styled Components'
+    description:
+      'CSS is a styling language that allows us to provide design and representation to our websites and applications.'
   },
   {
     name: 'terminal',
     label: 'Terminal',
     image: '/images/tags/terminal.png',
-    description: 'Terminal, Command Line, Shell'
+    description:
+      'Increasingly, the use of the terminal is more necessary to work on both the backend and the frontend, so having knowledge about it and optimizing its operation is important.'
   },
   {
     name: 'performance',
     label: 'Web Perf',
     image: '/images/tags/performance.png',
-    description: 'Web Performance Optimization'
+    description:
+      'El rendimiento de una web es la percepción de un usuario que la página es rápida y responde correctamente. Para conseguirlo hay muchas buenas prácticas a seguir, técnicas a implementar y trucos que se pueden utilizar aunque a veces es algo que transciende a la parte técnica y debe verse como una mentalidad dentro de una organización o empresa.'
   },
   {
     name: 'typescript',
     label: 'TypeScript',
     image: '/images/tags/typescript.png',
     description:
-      'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.'
+      'TypeScript is a statically typed superset of JavaScript that adds optional types to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript.'
+  },
+  {
+    name: 'git',
+    label: 'Git',
+    image: '/images/tags/git.ico',
+    description:
+      'Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.'
   }
 ]
 
 export const allTags = [
   ...displayTags,
-  {
-    name: 'experience',
-    label: 'Experience',
-    image: '/images/tags/personal.png',
-    description: 'Personal Experience'
-  },
+
   {
     name: 'go',
     label: 'Go',
     image: '/images/tags/go.png',
     description:
-      'Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.'
+      "Go, also known as Golang, is an open-source programming language that's known for its simplicity and efficiency. It was developed by Google and is designed to be easy to use, efficient to compile, and effective at concurrency."
+  },
+  {
+    name: 'career',
+    label: 'Career',
+    image: '/images/tags/work.png',
+    description:
+      'Insightful advice and practical tips for advancing your career as developer. Covers goal setting, skill improvement, networking, and strategies for getting hired.'
   }
 ]
