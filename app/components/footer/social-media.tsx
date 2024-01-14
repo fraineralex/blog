@@ -1,53 +1,56 @@
+import { Instagram, Rss } from 'lucide-react'
+import Link from 'next/link'
+
 export default function SocialMedia () {
   return (
     <div className='flex items-center justify-center mt-4'>
-      <a href='#' className='ml-4' aria-label='Twitter' rel='noopener'>
+      <Link
+        href='https://www.linkedin.com/in/fraineralex'
+        target='_blank'
+        className='ml-4'
+        aria-label='Linkedin'
+        rel='noopener'
+      >
         <svg
-          className='h-6 w-6 hover:text-hot-pink'
           xmlns='http://www.w3.org/2000/svg'
-          version='1.1'
-          xmlnsXlink='http://www.w3.org/1999/xlink'
-          viewBox='0 0 16 16'
-          width='16'
-          height='16'
+          viewBox='0 0 24 24'
+          fill='currentColor'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
+          aria-hidden='true'
         >
-          <g transform='matrix(0.6666666666666666,0,0,0.6666666666666666,0,0)'>
-            <path
-              d='M23.32,6.44c0.212-0.177,0.241-0.492,0.065-0.704c-0.068-0.082-0.161-0.14-0.265-0.166l-0.79-0.2 c-0.268-0.067-0.431-0.339-0.364-0.606C21.974,4.731,21.986,4.7,22,4.67l0.44-0.89c0.12-0.249,0.015-0.548-0.233-0.668 C22.099,3.06,21.976,3.049,21.86,3.08l-2,0.56c-0.151,0.044-0.314,0.014-0.44-0.08c-0.865-0.649-1.918-1-3-1c-2.761,0-5,2.239-5,5 l0,0v0.36c0.001,0.127-0.094,0.235-0.22,0.25C8.39,8.5,5.7,7.07,2.8,3.73c-0.128-0.142-0.325-0.2-0.51-0.15 C2.124,3.656,2.013,3.817,2,4C1.599,5.645,1.761,7.377,2.46,8.92c0.062,0.123,0.013,0.274-0.11,0.336 C2.303,9.279,2.251,9.288,2.2,9.28L1.08,9.06C0.807,9.016,0.551,9.202,0.507,9.474C0.498,9.533,0.499,9.592,0.51,9.65 c0.175,1.555,1.047,2.945,2.37,3.78c0.124,0.06,0.176,0.21,0.116,0.334c-0.025,0.051-0.065,0.092-0.116,0.116l-0.53,0.21 c-0.256,0.103-0.381,0.394-0.278,0.65c0.005,0.014,0.011,0.027,0.018,0.04c0.595,1.302,1.791,2.229,3.2,2.48 c0.13,0.047,0.197,0.191,0.15,0.32c-0.025,0.07-0.08,0.124-0.15,0.15C3.93,18.292,2.471,18.575,1,18.56 c-0.276-0.055-0.545,0.124-0.6,0.4s0.124,0.545,0.4,0.6l0,0c2.548,1.208,5.321,1.866,8.14,1.93c2.479,0.038,4.915-0.658,7-2 c3.484-2.326,5.571-6.241,5.56-10.43V8.19c0.001-0.147,0.067-0.286,0.18-0.38L23.32,6.44z'
-              stroke='none'
-              fill='currentColor'
-              stroke-width='0'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            ></path>
+          <path d='M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z'></path>
+        </svg>
+      </Link>
+      <Link
+        href='https://instagram.com/frainer.alex'
+        target='_blank'
+        className='ml-4'
+        aria-label='Instagram'
+        rel='noopener'
+      >
+        <Instagram className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110' />
+      </Link>
+      <Link href='https://twitter.com/fraineralex' className='ml-4' aria-label='Twitter' rel='noopener'>
+        <svg
+          viewBox='0 0 24 24'
+          fill='currentColor'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
+          aria-hidden='true'
+        >
+          <g>
+            <path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'></path>
           </g>
         </svg>
-      </a>
-      <a href='#' className='ml-4' aria-label='YouTube' rel='noopener'>
+      </Link>
+      <Link
+        href='https://github.com/fraineralex'
+        target='_blank'
+        className='ml-4'
+        aria-label='Github'
+        rel='noopener'
+      >
         <svg
-          className='h-6 w-6 hover:text-hot-pink'
-          xmlns='http://www.w3.org/2000/svg'
-          version='1.1'
-          xmlnsXlink='http://www.w3.org/1999/xlink'
-          viewBox='0 0 16 16'
-          width='16'
-          height='16'
-        >
-          <g transform='matrix(0.6666666666666666,0,0,0.6666666666666666,0,0)'>
-            <path
-              d='M20.06,3.5H3.94C1.764,3.5,0,5.264,0,7.44v9.12c0,2.176,1.764,3.94,3.94,3.94c0,0,0,0,0,0h16.12 c2.176,0,3.94-1.764,3.94-3.94l0,0V7.44C24,5.264,22.236,3.5,20.06,3.5L20.06,3.5z M16.54,12l-6.77,4.36 c-0.232,0.149-0.542,0.082-0.691-0.151C9.028,16.129,9,16.035,9,15.94V7.28c0-0.276,0.225-0.5,0.501-0.499 c0.095,0,0.189,0.028,0.269,0.079l6.77,4.33c0.232,0.15,0.299,0.459,0.149,0.691c-0.038,0.06-0.089,0.11-0.149,0.149V12z'
-              stroke='none'
-              fill='currentColor'
-              stroke-width='0'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            ></path>
-          </g>
-        </svg>
-      </a>
-      <a href='#' className='ml-4' aria-label='Github' rel='noopener'>
-        <svg
-          className='h-6 w-6 hover:text-hot-pink'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
           xmlns='http://www.w3.org/2000/svg'
           version='1.1'
           xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -67,10 +70,15 @@ export default function SocialMedia () {
             ></path>
           </g>
         </svg>
-      </a>
-      <a href='#' className='ml-4' aria-label='Email' rel='noopener'>
+      </Link>
+      <Link
+        href='mailto:fraineralex2001@gmail.com'
+        className='ml-4'
+        aria-label='Email'
+        rel='noopener'
+      >
         <svg
-          className='h-6 w-6 hover:text-hot-pink'
+          className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110'
           xmlns='http://www.w3.org/2000/svg'
           version='1.1'
           xmlnsXlink='http://www.w3.org/1999/xlink'
@@ -114,7 +122,16 @@ export default function SocialMedia () {
             ></path>
           </g>
         </svg>
-      </a>
+      </Link>
+      <Link
+        href='/feed.xml'
+        className='ml-4'
+        target='_blank'
+        aria-label='Rss'
+        rel='noopener'
+      >
+        <Rss className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110' />
+      </Link>
     </div>
   )
 }
