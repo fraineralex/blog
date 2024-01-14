@@ -14,19 +14,6 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-export async function generateMetadata (
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const previousImages = (await parent).openGraph?.images || []
-
-  return {
-    title: 'Feed.xml',
-    openGraph: {
-      images: ['/og.png', ...previousImages]
-    }
-  }
-}
-
 export async function GET () {
   const site_url =
     process.env.NODE_ENV === 'production'
