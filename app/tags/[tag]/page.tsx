@@ -27,7 +27,7 @@ type Props = {
   }
 }
 
-export async function generateStaticParams (): Promise<Props['params'][]> {
+/* export async function generateStaticParams (): Promise<Props['params'][]> {
   return allTags.map(tag => ({
     tag: tag.name
   }))
@@ -55,9 +55,10 @@ export async function generateMetadata (
       images: [tag.image, ...previousImages]
     }
   }
-}
+} */
 
 export const revalidate = 60
+
 export default async function BlogPage ({ params }: Props) {
   const tagName = params?.tag
   const sortedPosts = allPosts
