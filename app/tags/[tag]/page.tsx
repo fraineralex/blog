@@ -40,6 +40,9 @@ export async function generateMetadata (
   const tagName = params?.tag
   const tag = allTags.find(tag => tag.name === tagName)
 
+  console.log('tagName:', tagName)
+  console.log('tag:', tag)
+
   if (!tag) {
     return {
       title: 'Not Found'
@@ -60,7 +63,14 @@ export async function generateMetadata (
 export const revalidate = 60
 export default async function BlogPage ({ params }: Props) {
   const tagName = params?.tag
-  const postKeys = allPosts
+  const sortedPosts = allPosts
+    .filter(post => post.published && post.tags?.includes(tagName))
+    .sort(
+      (a, b) =>
+        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
+    )
+  const postKeys = sortedPosts
     .filter(post => post.tags?.includes(tagName))
     .map(post => ['pageviews', 'posts', post?.slug].join(':'))
 
@@ -68,18 +78,10 @@ export default async function BlogPage ({ params }: Props) {
 
   if (postKeys.length > 0) {
     views = (await redis.mget<number[]>(...postKeys)).reduce((acc, v, i) => {
-      acc[allPosts[i].slug] = v ?? 0
+      acc[sortedPosts[i].slug] = v ?? 0
       return acc
     }, {} as Record<string, number>)
   }
-
-  const sorted = allPosts
-    .filter(post => post.published && post.tags?.includes(tagName))
-    .sort(
-      (a, b) =>
-        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
-    )
 
   const tag = allTags.find(tag => tag.name === tagName)
 
@@ -95,7 +97,7 @@ export default async function BlogPage ({ params }: Props) {
             </code>
           </h1>
           <p className='text-zinc-400 -mt-20 text-lg leading-relaxed'>
-            {sorted.length === 0 ? (
+            {sortedPosts.length === 0 ? (
               <>
                 ☹️ There are no articles about{' '}
                 <strong className='text-zinc-300 font-bold'>
@@ -111,7 +113,7 @@ export default async function BlogPage ({ params }: Props) {
 
         <div className='grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3'>
           <div className='grid grid-cols-1 gap-4'>
-            {sorted
+            {sortedPosts
               .filter((_, i) => i % 3 === 0)
               .map((post, index) => (
                 <Article
@@ -122,7 +124,7 @@ export default async function BlogPage ({ params }: Props) {
               ))}
           </div>
           <div className='grid grid-cols-1 gap-4'>
-            {sorted
+            {sortedPosts
               .filter((_, i) => i % 3 === 1)
               .map((post, index) => (
                 <Article
@@ -133,7 +135,7 @@ export default async function BlogPage ({ params }: Props) {
               ))}
           </div>
           <div className='grid grid-cols-1 gap-4'>
-            {sorted
+            {sortedPosts
               .filter((_, i) => i % 3 === 2)
               .map((post, index) => (
                 <Article
