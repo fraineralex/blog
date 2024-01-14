@@ -40,24 +40,19 @@ export async function generateMetadata (
   const tagName = params?.tag
   const tag = allTags.find(tag => tag.name === tagName)
 
-  console.log('tagName:', tagName)
-  console.log('tag:', tag)
-
-  if (tag) {
-    const previousImages = (await parent).openGraph?.images || []
-
+  if (!tag) {
     return {
-      title: tag.label,
-      openGraph: {
-        images: [tag.image, ...previousImages]
-      }
+      title: 'Not Found'
     }
   }
 
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+
   return {
-    title: "Frainer's blog",
+    title: tag.label,
     openGraph: {
-      images: ['/og.png']
+      images: [tag.image, ...previousImages]
     }
   }
 }
