@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navigation } from '../components/nav/nav'
-import { AllTags } from '../components/tags/all-tags'
+import { ArticlesByTags } from '../components/tags/articles-by-tags'
 
 export default async function TagsPage () {
   return (
@@ -13,7 +13,7 @@ export default async function TagsPage () {
             Some of my thoughts on software, technology, and life.
           </p>
         </header>
-        <AllTags displayAllTags />
+        <ArticlesByTags displayAllTags />
       </div>
     </div>
   )

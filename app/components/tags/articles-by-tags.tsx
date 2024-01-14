@@ -3,7 +3,11 @@ import { ReactIcon } from '../common/svg-icons'
 import Image from 'next/image'
 import { displayTags, allTags } from '@/util/data'
 
-export function AllTags ({ displayAllTags }: { displayAllTags?: boolean }) {
+export function ArticlesByTags ({
+  displayAllTags
+}: {
+  displayAllTags?: boolean
+}) {
   const tags = displayAllTags ? allTags : displayTags
   return (
     <section className='mx-auto lg:mx-0 w-full'>

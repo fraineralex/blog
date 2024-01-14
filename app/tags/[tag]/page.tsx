@@ -3,7 +3,7 @@ import { Navigation } from '../../components/nav/nav'
 import { Article } from '../../components/articles/article'
 import { Redis } from '@upstash/redis'
 import { Post } from 'contentlayer/generated'
-import { AllTags } from '../../components/tags/all-tags'
+import { ArticlesByTags } from '../../components/tags/articles-by-tags'
 import { allTags } from '@/util/data'
 import { Metadata, ResolvingMetadata } from 'next'
 
@@ -143,7 +143,7 @@ export default async function BlogPage ({ params }: Props) {
               ))}
           </div>
         </div>
-        <AllTags />
+        <ArticlesByTags />
       </div>
     </div>
   )
