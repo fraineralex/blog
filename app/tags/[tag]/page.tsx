@@ -2,22 +2,13 @@ import React from 'react'
 import { Navigation } from '../../components/nav/nav'
 import { Article } from '../../components/articles/article'
 import { Redis } from '@upstash/redis'
-import { Post } from 'contentlayer/generated'
 import { ArticlesByTags } from '../../components/tags/articles-by-tags'
 import { allTags } from '@/util/data'
 import { Metadata, ResolvingMetadata } from 'next'
-
-let allPosts: Array<Post>
-
-if (process.env.NODE_ENV === 'development') {
-  import('../../../util/monks').then(module => {
-    allPosts = module.allPostsDev
-  })
-} else {
-  import('contentlayer/generated').then(module => {
-    allPosts = module.allPosts
-  })
-}
+import { allPostsDev } from '@/util/monks'
+import { allPosts as allPostsProd } from 'contentlayer/generated'
+const allPosts: typeof allPostsProd =
+  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
 
 const redis = Redis.fromEnv()
 
@@ -27,7 +18,7 @@ type Props = {
   }
 }
 
-/* export async function generateStaticParams (): Promise<Props['params'][]> {
+export async function generateStaticParams (): Promise<Props['params'][]> {
   return allTags.map(tag => ({
     tag: tag.name
   }))
@@ -42,7 +33,7 @@ export async function generateMetadata (
 
   if (!tag) {
     return {
-      title: 'Not Found'
+      title: 'Tag Not Found'
     }
   }
 
@@ -55,7 +46,7 @@ export async function generateMetadata (
       images: [tag.image, ...previousImages]
     }
   }
-} */
+}
 
 export const revalidate = 60
 

@@ -5,20 +5,12 @@ import { Article } from './components/articles/article'
 import { Redis } from '@upstash/redis'
 import { Eye } from 'lucide-react'
 import Image from 'next/image'
-import { Post } from 'contentlayer/generated'
 import { ArticlesByTags } from './components/tags/articles-by-tags'
-
-let allPosts: Array<Post>
-
-if (process.env.NODE_ENV === 'development') {
-  import('../util/monks').then(module => {
-    allPosts = module.allPostsDev
-  })
-} else {
-  import('contentlayer/generated').then(module => {
-    allPosts = module.allPosts
-  })
-}
+import { allPostsDev } from '@/util/monks'
+import { allPosts as allPostsProd } from 'contentlayer/generated'
+const allPosts: typeof allPostsProd =
+  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
+  
 const redis = Redis.fromEnv()
 
 export const revalidate = 60
