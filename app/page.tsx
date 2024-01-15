@@ -5,20 +5,12 @@ import { Article } from './components/articles/article'
 import { Redis } from '@upstash/redis'
 import { Eye } from 'lucide-react'
 import Image from 'next/image'
-import { Post } from 'contentlayer/generated'
-import { AllTags } from './components/tags/all-tags'
+import { ArticlesByTags } from './components/tags/articles-by-tags'
+import { allPostsDev } from '@/util/monks'
+import { allPosts as allPostsProd } from 'contentlayer/generated'
+const allPosts: typeof allPostsProd =
+  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
 
-let allPosts: Array<Post>
-
-if (process.env.NODE_ENV === 'development') {
-  import('../util/monks').then(module => {
-    allPosts = module.allPostsDev
-  })
-} else {
-  import('contentlayer/generated').then(module => {
-    allPosts = module.allPosts
-  })
-}
 const redis = Redis.fromEnv()
 
 export const revalidate = 60
@@ -64,7 +56,8 @@ export default async function BlogPage () {
             {thereAreFourPosts ? 'Blog Posts' : 'Articles'}
           </h1>
           <p className='text-zinc-400 -mt-20 text-lg leading-relaxed'>
-            Some of my thoughts on software, technology, and life.
+            Some of my thoughts on software engineering, web development, and
+            life.
           </p>
         </header>
 
@@ -188,7 +181,7 @@ export default async function BlogPage () {
               ))}
           </div>
         </div>
-        <AllTags />
+        <ArticlesByTags />
       </div>
     </div>
   )

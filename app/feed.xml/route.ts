@@ -1,17 +1,8 @@
 import RSS from 'rss'
-import { Post } from 'contentlayer/generated'
-
-let allPosts: Array<Post>
-
-if (process.env.NODE_ENV === 'development') {
-  import('../../util/monks').then(module => {
-    allPosts = module.allPostsDev
-  })
-} else {
-  import('contentlayer/generated').then(module => {
-    allPosts = module.allPosts
-  })
-}
+import { allPostsDev } from '@/util/monks'
+import { allPosts as allPostsProd } from 'contentlayer/generated'
+const allPosts: typeof allPostsProd =
+  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
 
 export async function GET () {
   const site_url =
@@ -20,9 +11,9 @@ export async function GET () {
       : 'http://localhost:3000'
 
   const feed = new RSS({
-    title: "Frainer's Blog | ",
+    title: "Frainer's Blog",
     description:
-      "Recent content on Frainer's Blog | Web development, Programming, and Computer Science",
+      "Recent content on Frainer's Blog | Web development, Programming, and Computer Science.",
     site_url: site_url,
     feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/images/og.png`,
@@ -30,7 +21,7 @@ export async function GET () {
     language: 'en-US'
   })
 
-  allPosts.map((post: Post) => {
+  allPosts.map(post => {
     feed.item({
       title: post.title,
       url: `${site_url}/${post.slug}`,

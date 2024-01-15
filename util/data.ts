@@ -1,4 +1,16 @@
-export const displayTags = [
+import { allPosts as allPostsProd } from 'contentlayer/generated'
+import { allPostsDev } from '@/util/monks'
+const allPosts: typeof allPostsProd =
+  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
+
+type tag = {
+  name: string
+  label: string
+  image: string
+  description: string
+}
+
+export const allTags: tag[] = [
   {
     name: 'javascript',
     label: 'JavaScript',
@@ -34,6 +46,13 @@ export const displayTags = [
     description:
       "Python is a high-level, interpreted programming language with dynamic semantics. It's known for its simple, easy-to-read syntax which emphasizes readability and reduces the cost of program maintenance."
   },
+    {
+    name: 'typescript',
+    label: 'TypeScript',
+    image: '/images/tags/typescript.png',
+    description:
+      'TypeScript is a statically typed superset of JavaScript that adds optional types to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript.'
+  },
   {
     name: 'odoo',
     label: 'Odoo',
@@ -63,23 +82,12 @@ export const displayTags = [
       'El rendimiento de una web es la percepción de un usuario que la página es rápida y responde correctamente. Para conseguirlo hay muchas buenas prácticas a seguir, técnicas a implementar y trucos que se pueden utilizar aunque a veces es algo que transciende a la parte técnica y debe verse como una mentalidad dentro de una organización o empresa.'
   },
   {
-    name: 'typescript',
-    label: 'TypeScript',
-    image: '/images/tags/typescript.png',
-    description:
-      'TypeScript is a statically typed superset of JavaScript that adds optional types to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript.'
-  },
-  {
     name: 'git',
     label: 'Git',
     image: '/images/tags/git.ico',
     description:
       'Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.'
-  }
-]
-
-export const allTags = [
-  ...displayTags,
+  },
 
   {
     name: 'go',
@@ -95,4 +103,18 @@ export const allTags = [
     description:
       'Insightful advice and practical tips for advancing your career as developer. Covers goal setting, skill improvement, networking, and strategies for getting hired.'
   }
+]
+
+export const displayTags: tag[] = [
+  ...new Set(
+    allPosts
+      .map(post => {
+        return (
+          post.tags.map(
+            tag => allTags.find(t => t.name === tag) || ({} as tag)
+          ) || []
+        )
+      })
+      .flat()
+  )
 ]

@@ -12,11 +12,12 @@ export const metadata: Metadata = {
     template: "%s | Frainer's Blog"
   },
   description:
-    "Frainer's Blog when he share his thoughts about software, technology, and life.",
+    'Some of my thoughts on software engineering, web development, and life. Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.',
   openGraph: {
-    title: "Frainer's Blog",
-    description: 'Some of my thoughts on software, technology, and life.',
-    url: 'https://frainer-blog.vercel.app',
+    title: "Frainer's Blog | Full Stack Development",
+    description:
+      'Some of my thoughts on software engineering, web development, and life. Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.',
+    url: 'fraineralex.com/blog',
     siteName: 'fraineralex.com',
     images: [
       {
@@ -40,13 +41,18 @@ export const metadata: Metadata = {
     }
   },
   twitter: {
-    title: "Frainer's Blog",
-    card: 'summary_large_image'
+    title: "Frainer's Blog | Full Stack Development",
+    card: 'summary_large_image',
+    creator: '@fraineralex',
+    site: '@fraineralex',
+    description:
+      'Some of my thoughts on software engineering, web development, and life. Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.'
   },
   icons: {
     shortcut: '/favicon.ico'
   }
 }
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter'

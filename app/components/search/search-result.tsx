@@ -1,17 +1,9 @@
-import { Post } from 'contentlayer/generated'
 import { BlogCard } from './blog-card'
 import { Search } from 'lucide-react'
-let allPosts: Array<Post>
-
-if (process.env.NODE_ENV === 'development') {
-  import('../../../util/monks').then(module => {
-    allPosts = module.allPostsDev
-  })
-} else {
-  import('contentlayer/generated').then(module => {
-    allPosts = module.allPosts
-  })
-}
+import { allPostsDev } from '@/util/monks'
+import { allPosts as allPostsProd } from 'contentlayer/generated'
+const allPosts: typeof allPostsProd =
+  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
 
 export const SearchResult = ({ searchTerm }: { searchTerm: string }) => {
   const filteredPosts = allPosts.filter(post => {
