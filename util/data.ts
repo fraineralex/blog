@@ -46,6 +46,13 @@ export const allTags: tag[] = [
     description:
       "Python is a high-level, interpreted programming language with dynamic semantics. It's known for its simple, easy-to-read syntax which emphasizes readability and reduces the cost of program maintenance."
   },
+    {
+    name: 'typescript',
+    label: 'TypeScript',
+    image: '/images/tags/typescript.png',
+    description:
+      'TypeScript is a statically typed superset of JavaScript that adds optional types to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript.'
+  },
   {
     name: 'odoo',
     label: 'Odoo',
@@ -73,13 +80,6 @@ export const allTags: tag[] = [
     image: '/images/tags/performance.png',
     description:
       'El rendimiento de una web es la percepción de un usuario que la página es rápida y responde correctamente. Para conseguirlo hay muchas buenas prácticas a seguir, técnicas a implementar y trucos que se pueden utilizar aunque a veces es algo que transciende a la parte técnica y debe verse como una mentalidad dentro de una organización o empresa.'
-  },
-  {
-    name: 'typescript',
-    label: 'TypeScript',
-    image: '/images/tags/typescript.png',
-    description:
-      'TypeScript is a statically typed superset of JavaScript that adds optional types to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript.'
   },
   {
     name: 'git',

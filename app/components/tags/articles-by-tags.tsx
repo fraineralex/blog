@@ -10,7 +10,7 @@ export function ArticlesByTags ({
 }) {
   const tags = displayAllTags ? allTags : displayTags
   return (
-    <section className='mx-auto lg:mx-0 w-full'>
+    <section className='mx-auto lg:mx-0 w-full pb-3'>
       <h2 className='text-3xl font-bold tracking-wide text-zinc-500 sm:text-4xl pb-5 font-londrina'>
         Articles by theme
       </h2>
