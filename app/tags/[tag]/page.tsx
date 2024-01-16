@@ -85,7 +85,7 @@ export default async function BlogPage ({ params }: Props) {
               {tag?.label || tagName}
             </code>
           </h1>
-          <p className='text-zinc-400 -mt-20 text-lg leading-relaxed'>
+          <p className='text-zinc-400 -mt-20 text-xs md:text-lg leading-relaxed'>
             {sortedPosts.length === 0 ? (
               <>
                 ☹️ There are no articles about{' '}

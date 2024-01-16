@@ -5,18 +5,19 @@ import { Metadata } from 'next'
 import { Analytics } from './components/articles/analytics'
 import '../styles/main.scss'
 import Footer from './components/footer/footer'
+import React from 'react'
 
 export const metadata: Metadata = {
   title: {
-    default: "Frainer's Blog",
+    default: "Frainer's Blog 📝",
     template: "%s | Frainer's Blog"
   },
   description:
-    'Some of my thoughts on software engineering, web development, and life. Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.',
+    "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about! Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.",
   openGraph: {
-    title: "Frainer's Blog | Full Stack Development",
+    title: "Frainer's Blog 📝",
     description:
-      'Some of my thoughts on software engineering, web development, and life. Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.',
+      "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about!",
     url: 'fraineralex.com/blog',
     siteName: 'fraineralex.com',
     images: [
@@ -41,12 +42,12 @@ export const metadata: Metadata = {
     }
   },
   twitter: {
-    title: "Frainer's Blog | Full Stack Development",
+    title: "Frainer's Blog 📝",
     card: 'summary_large_image',
     creator: '@fraineralex',
     site: '@fraineralex',
     description:
-      'Some of my thoughts on software engineering, web development, and life. Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.'
+      "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about!"
   },
   icons: {
     shortcut: '/favicon.ico'

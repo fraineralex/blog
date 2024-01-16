@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 export function ProfileLink ({ className }: { className?: string }) {
   return (
-    <article className='hidden md:block pl-5 group'>
+    <article className='block sm:pl-5 group'>
       <h2
-        className={`blog-title text-lg md:text-lg text-left break-words font-heading font-semibold leading-normal md:font-bold font-calsans ${
+        className={`blog-title text-sm sm:text-lg text-left break-words font-heading font-semibold leading-normal md:font-bold font-calsans ${
           className ? className : 'text-zinc-400  hover:text-zinc-100'
         }`}
       >
@@ -14,7 +15,7 @@ export function ProfileLink ({ className }: { className?: string }) {
           className='focus-ring-base flex flex-row items-center focus-ring-colors-light-header'
           aria-label="Frainer's blog home page"
         >
-          <figure className='mr-2 h-8 w-8 shrink-0 overflow-hidden rounded-full'>
+          <figure className='mr-1 sm:mr-2 h-6 w-6 sm:h-8 sm:w-8 shrink-0 overflow-hidden rounded-full'>
             <span
               style={{
                 boxSizing: 'border-box',

@@ -31,7 +31,7 @@ export const SearchResult = ({ searchTerm }: { searchTerm: string }) => {
         >
           <div className='w-full h-full'>
             <div style={{ minWidth: '100%', display: 'table' }}>
-              <div className='mt-2 rounded pb-10 md:mt-5 max-w-5xl mr-5'>
+              <div className='mt-2 rounded pb-10 md:mt-5 md:max-w-5xl md:mr-5'>
                 {filteredPosts.map((blog, index) => (
                   <BlogCard key={index} blog={blog} />
                 ))}

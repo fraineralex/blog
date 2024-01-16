@@ -52,13 +52,14 @@ export default async function BlogPage () {
       <Navigation />
       <div className='px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-26'>
         <header className='mx-auto max-w-2xl text-center content'>
-          <h1 className='font-bold text-zinc-100 font-londrina'>
+          <h1 className='font-bold text-zinc-100 font-londrina pb-2 md:pb-3'>
+            {' '}
             {thereAreFourPosts ? 'Blog Posts' : 'Articles'}
           </h1>
-          <p className='text-zinc-400 -mt-20 text-lg leading-relaxed'>
+          <small className='text-zinc-400 md:text-lg leading-relaxed text-sm'>
             Some of my thoughts on software engineering, web development, and
             life.
-          </p>
+          </small>
         </header>
 
         {thereAreFourPosts && (

@@ -77,10 +77,10 @@ export default async function PostPage ({ params }: Props) {
 
   return (
     <>
-      <section className='min-h-screen max-w-4xl mx-auto px-8 text-zinc-300'>
+      <section className='min-h-screen max-w-6xl md:max-w-4xl mx-auto px-4 md:px-8 text-zinc-300'>
         <Header post={post} views={views} />
         <ReportView slug={post.slug} />
-        <header className='mx-auto max-w-3xl text-center content pt-20 sm:pt-28'>
+        <header className='mx-auto max-w-3xl text-center content pt-20 md:pt-28'>
           <h1 className='text-white mb-8'>{post.title}</h1>
         </header>
 
@@ -94,8 +94,8 @@ export default async function PostPage ({ params }: Props) {
           height={427}
         />
 
-        <small className='text-zinc-400 flex flex-col font-bold uppercase sm:flex-row text-center pb-8 place-content-center py-6 px-6'>
-          <span className='mb-2 sm:mb-0'>
+        <small className='text-xs md:text-sm text-zinc-400 flex flex-col font-bold uppercase md:flex-row text-center pb-8 place-content-center py-6 md:px-6'>
+          <span className='mb-2 md:mb-0'>
             {post.updated && <span>Updated on</span>}{' '}
             <time
               dateTime={new Date(post.updated || post.date).toISOString()}
@@ -107,11 +107,29 @@ export default async function PostPage ({ params }: Props) {
                 dateStyle: 'medium'
               }).format(new Date(post.updated || post.date))}
             </time>{' '}
-            <span className='px-4'>•</span>
-            <span>{post.readTime} min read</span>
+            <span className='px-1 md:px-4'>•</span>
+            <span className='me-2 md:me-0'>{post.readTime} min read</span>
+            {post.tags &&
+              post.tags.slice(0, 2).map((tagName, index) => {
+                const tag = allTags.find(tag => tag.name === tagName)
+                return (
+                  <>
+                    <Link
+                      key={index}
+                      href={`/tags/${tag?.name || tagName}`}
+                      className='text-hot-pink font-bold underline underline-offset-4 py-3 md:px-1 hover:text-white text-xs inline md:hidden'
+                    >
+                      {tag?.label || tagName}
+                    </Link>
+                    {index !== (post.tags?.length ?? 0) - 1 && (
+                      <span className='px-1 inline md:hidden'>•</span>
+                    )}
+                  </>
+                )
+              })}
           </span>
-          <span className='hidden px-4 sm:block'>|</span>
-          <div className='flex flex-wrap'>
+          <span className='hidden px-1 md:px-4 md:block'>|</span>
+          <div className='hidden md:flex flex-wrap px-1 text-center place-content-center'>
             {post.tags &&
               post.tags.map((tagName, index) => {
                 const tag = allTags.find(tag => tag.name === tagName)
@@ -119,7 +137,7 @@ export default async function PostPage ({ params }: Props) {
                   <div key={index}>
                     <Link
                       href={`/tags/${tag?.name || tagName}`}
-                      className='text-hot-pink font-bold underline underline-offset-4 py-3 px-1 hover:text-white'
+                      className='text-hot-pink font-medium md:font-bold underline underline-offset-4 py-3 md:px-1 hover:text-white'
                     >
                       {tag?.label || tagName}
                     </Link>
@@ -132,11 +150,11 @@ export default async function PostPage ({ params }: Props) {
           </div>
         </small>
 
-        <article className='px-6 content pb-12'>
+        <article className='px-2 md:px-6 content pb-12'>
           <Mdx code={post.body.code} />
         </article>
+        <Subscribe />
       </section>
-      <Subscribe />
     </>
   )
 }

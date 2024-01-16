@@ -140,11 +140,7 @@
     }
   }
 
-  p {
-    @apply leading-7;
-  }
-
   p:not(:first-child) {
-    @apply mt-6;
+    @apply mt-4 md:mt-6;
   }
 }
