@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | Frainer's Blog"
   },
   description:
-    "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about! Here you will find articles about JavaScript, React, Python, CSS, Node.js and more.",
+    "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about! Here you will find articles about web development, programming and software engineering.",
   openGraph: {
     title: "Frainer's Blog 📝",
     description:

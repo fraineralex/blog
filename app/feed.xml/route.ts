@@ -1,4 +1,5 @@
 import RSS from 'rss'
+import { format } from 'date-fns'
 import { allPostsDev } from '@/util/monks'
 import { allPosts as allPostsProd } from 'contentlayer/generated'
 const allPosts: typeof allPostsProd =
@@ -11,14 +12,16 @@ export async function GET () {
       : 'http://localhost:3000'
 
   const feed = new RSS({
-    title: "Frainer's Blog",
+    title: "Frainer's Blog 📝",
     description:
-      "Recent content on Frainer's Blog | Web development, Programming, and Computer Science.",
+      "Recent content on Frainer's Blog | Web development, Programming, and Software Engineering.",
     site_url: site_url,
     feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/images/og.png`,
-    pubDate: new Date(),
-    language: 'en-US'
+    pubDate: format(new Date(), 'EEE, dd MMM yyyy HH:mm:ss xx'),
+    language: 'en-US',
+    categories: ['Web Development', 'Programming', 'Software Engineering'],
+    custom_elements: [{ 'dc:creator': 'Frainer Encarnación' }]
   })
 
   allPosts.map(post => {
@@ -29,7 +32,12 @@ export async function GET () {
       description: post.description,
       categories: post.tags?.map(tag => tag) || [],
       guid: post.slug,
-      author: 'Frainer Encarnación'
+      author: 'Frainer Encarnación',
+      enclosure: {
+        url: `${site_url}${post.hero}`,
+        type: 'image/png'
+      },
+      custom_elements: [{ 'content:encoded': post.body }]
     })
   })
 
