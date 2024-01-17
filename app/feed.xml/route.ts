@@ -14,7 +14,7 @@ export async function GET () {
   const feed = new RSS({
     title: "Frainer's Blog 📝",
     description:
-      "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about! Here you will find articles about web development, software engineering, and many more geeky things in the world of programming.",
+      "Recent articles from Frainer's Blog. I write about tech, programming and whatever else I'm thinking about!",
     site_url: site_url,
     feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/images/og.png`,
@@ -41,8 +41,6 @@ export async function GET () {
   })
 
   return new Response(feed.xml({ indent: true }), {
-    headers: {
-      'Content-Type': 'application/atom+xml; charset=utf-8'
-    }
+    headers: { 'Content-Type': 'application/xml' }
   })
 }
