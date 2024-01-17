@@ -16,7 +16,7 @@ export async function GET () {
     description:
       "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about! Here you will find articles about web development, software engineering, and many more geeky things in the world of programming.",
     site_url: site_url,
-    feed_url: `${site_url}/rss.xml`,
+    feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/images/og.png`,
     pubDate: format(new Date(), 'EEE, dd MMM yyyy HH:mm:ss xx'),
     language: 'en-US',
@@ -35,9 +35,8 @@ export async function GET () {
       author: 'Frainer Encarnación',
       enclosure: {
         url: `${site_url}${post.hero}`,
-        type: 'image/png'
-      },
-      custom_elements: [{ 'content:encoded': post.body.raw }]
+        type: `image/${post.hero?.split('.').pop() || 'png'}`
+      }
     })
   })
 
