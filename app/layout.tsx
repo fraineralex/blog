@@ -87,11 +87,11 @@ export default function RootLayout ({
         <Analytics />
       </head>
       <body
-        className={`bg-black ${
+        className={`bg-[#1F222A] ${
           process.env.NODE_ENV === 'development' ? 'debug-screens' : undefined
         }`}
       >
-        <main className='relative min-h-screen bg-gradient-to-tl from-zinc-900 via-zinc-400/10 to-zinc-900 blog'>
+        <main className='relative min-h-screen blog'>
           {children}
           <Footer />
         </main>

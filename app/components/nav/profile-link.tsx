@@ -13,7 +13,6 @@ export function ProfileLink ({ className }: { className?: string }) {
         <Link
           href='/'
           className='focus-ring-base flex flex-row items-center focus-ring-colors-light-header'
-          aria-label="Frainer's blog home page"
         >
           <figure className='mr-1 sm:mr-2 h-6 w-6 sm:h-8 sm:w-8 shrink-0 overflow-hidden rounded-full'>
             <span

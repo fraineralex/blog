@@ -13,7 +13,7 @@ export function ArticlesByTags ({
   return (
     <section className='mx-auto lg:mx-0 w-full'>
       <h2 className='text-3xl font-bold tracking-wide text-zinc-500 sm:text-4xl pb-5 font-londrina'>
-        Articles by theme
+        View posts by tag
       </h2>
       <div className='w-full h-px bg-zinc-700' />
       <article className='mt-5 md:mt-10 flex flex-rows flex-wrap gap-2 sm:gap-5'>

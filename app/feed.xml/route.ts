@@ -15,9 +15,9 @@ export async function GET () {
     title: "Frainer's Blog 📝",
     description:
       "Recent articles from Frainer's Blog. I write about tech, programming and whatever else I'm thinking about!",
-    site_url: site_url,
+    site_url: `${site_url}/`,
     feed_url: `${site_url}/feed.xml`,
-    image_url: `${site_url}/images/og.png`,
+    image_url: `${site_url}/og.png`,
     pubDate: format(new Date(), 'EEE, dd MMM yyyy HH:mm:ss xx'),
     language: 'en-US',
     categories: ['tech', 'programming', 'software'],
