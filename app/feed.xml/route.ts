@@ -6,6 +6,7 @@ const allPosts: typeof allPostsProd =
   process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
 
 export async function GET () {
+  const lastPostDate = allPosts[allPosts.length - 1].date
   const site_url =
     process.env.NODE_ENV === 'production'
       ? 'https://frainer-blog.vercel.app'
@@ -18,7 +19,7 @@ export async function GET () {
     site_url: `${site_url}/`,
     feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/og.png`,
-    pubDate: format(new Date(), 'EEE, dd MMM yyyy HH:mm:ss xx'),
+    pubDate: format(new Date(lastPostDate), 'EEE, dd MMM yyyy HH:mm:ss xx'),
     language: 'en-US',
     categories: ['tech', 'programming', 'software'],
     custom_elements: [{ 'dc:creator': 'Frainer Encarnación' }]
@@ -41,6 +42,8 @@ export async function GET () {
   })
 
   return new Response(feed.xml({ indent: true }), {
-    headers: { 'Content-Type': 'application/xml' }
+    headers: { 'Content-Type': 'application/xml' },
+    status: 200,
+    statusText: 'OK'
   })
 }
