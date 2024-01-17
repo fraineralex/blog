@@ -14,13 +14,13 @@ export async function GET () {
   const feed = new RSS({
     title: "Frainer's Blog 📝",
     description:
-      "Recent content on Frainer's Blog | Web development, Programming, and Software Engineering.",
+      "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about! Here you will find articles about web development, software engineering, and many more geeky things in the world of programming.",
     site_url: site_url,
     feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/images/og.png`,
     pubDate: format(new Date(), 'EEE, dd MMM yyyy HH:mm:ss xx'),
     language: 'en-US',
-    categories: ['Web Development', 'Programming', 'Software Engineering'],
+    categories: ['tech', 'programming', 'software'],
     custom_elements: [{ 'dc:creator': 'Frainer Encarnación' }]
   })
 
@@ -37,7 +37,7 @@ export async function GET () {
         url: `${site_url}${post.hero}`,
         type: 'image/png'
       },
-      custom_elements: [{ 'content:encoded': post.body }]
+      custom_elements: [{ 'content:encoded': post.body.code }]
     })
   })
 
