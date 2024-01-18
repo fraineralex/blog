@@ -7,7 +7,7 @@ import { Eye } from 'lucide-react'
 import Image from 'next/image'
 import { ArticlesByTags } from './components/tags/articles-by-tags'
 import { allPostsDev } from '@/util/monks'
-import { allPosts as allPostsProd } from 'contentlayer/generated'
+import { Post, allPosts as allPostsProd } from 'contentlayer/generated'
 const allPosts: typeof allPostsProd =
   process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
 
@@ -24,28 +24,37 @@ export default async function BlogPage () {
     return acc
   }, {} as Record<string, number>)
 
-  const featured = allPosts.find(
-    post => post?.slug === 'installing-go-on-a-mac'
-  )!
-  const top2 = allPosts.find(post => post?.slug === 'installing-go-on-a-mac')!
-  const top3 = allPosts.find(post => post?.slug === 'installing-go-on-a-mac')!
-  const sorted = allPosts
-    .filter(post => post.published)
-    .filter(
-      post =>
-        post?.slug !== featured.slug &&
-        post?.slug !== top2?.slug &&
-        post?.slug !== top3?.slug
-    )
-  .sort(
-      (a, b) =>
-        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
-    )
-
-  sorted.push(featured)
-
   const thereAreFourPosts = allPosts.length >= 4
+  let sorted = allPosts
+  // define featured, top2, top3 as type Post
+  let featured = allPosts[0]
+  let top2 = allPosts[0]
+  let top3 = allPosts[0]
+
+  if (thereAreFourPosts) {
+    featured = allPosts.find(
+      post => post?.slug === 'how-to-install-multiple-versions-nodejs-nvm'
+    )!
+    top2 = allPosts.find(
+      post => post?.slug === 'how-to-install-multiple-versions-nodejs-nvm'
+    )!
+    top3 = allPosts.find(
+      post => post?.slug === 'how-to-install-multiple-versions-nodejs-nvm'
+    )!
+    sorted = allPosts
+      .filter(post => post.published)
+      .filter(
+        post =>
+          post?.slug !== featured.slug &&
+          post?.slug !== top2?.slug &&
+          post?.slug !== top3?.slug
+      )
+      .sort(
+        (a, b) =>
+          new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+          new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
+      )
+  }
 
   return (
     <div className='relative'>
