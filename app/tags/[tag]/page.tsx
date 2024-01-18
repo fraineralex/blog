@@ -54,11 +54,11 @@ export default async function BlogPage ({ params }: Props) {
   const tagName = params?.tag
   const sortedPosts = allPosts
     .filter(post => post.published && post.tags?.includes(tagName))
-    /* .sort(
+    .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
-    ) */
+    )
   const postKeys = sortedPosts
     .filter(post => post.tags?.includes(tagName))
     .map(post => ['pageviews', 'posts', post?.slug].join(':'))
@@ -75,7 +75,7 @@ export default async function BlogPage ({ params }: Props) {
   const tag = allTags.find(tag => tag.name === tagName)
 
   return (
-    <div className='relative pb-16'>
+    <div className='relative'>
       <Navigation />
       <div className='px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-26'>
         <header className='mx-auto max-w-4xl text-center tag'>

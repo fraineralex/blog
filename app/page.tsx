@@ -37,18 +37,18 @@ export default async function BlogPage () {
         post?.slug !== top2?.slug &&
         post?.slug !== top3?.slug
     )
-    /* .sort(
+  .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
-    ) */
+    )
 
   sorted.push(featured)
 
   const thereAreFourPosts = allPosts.length >= 4
 
   return (
-    <div className='relative pb-16'>
+    <div className='relative'>
       <Navigation />
       <div className='px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-26'>
         <header className='mx-auto max-w-2xl text-center content'>

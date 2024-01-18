@@ -30,7 +30,12 @@ export default function SocialMedia () {
       >
         <Instagram className='h-6 w-6 text-slate-300 hover:text-white hover:scale-110' />
       </Link>
-      <Link href='https://twitter.com/fraineralex' className='ml-4' aria-label='Twitter' rel='noopener'>
+      <Link
+        href='https://twitter.com/fraineralex'
+        className='ml-4'
+        aria-label='Twitter'
+        rel='noopener'
+      >
         <svg
           viewBox='0 0 24 24'
           fill='currentColor'

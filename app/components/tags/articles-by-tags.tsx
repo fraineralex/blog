@@ -11,12 +11,12 @@ export function ArticlesByTags ({
 }) {
   const tags = displayAllTags ? allTags : displayTags
   return (
-    <section className='mx-auto lg:mx-0 w-full'>
+    <section className='lg:mx-0 w-full'>
       <h2 className='text-3xl font-bold tracking-wide text-zinc-500 sm:text-4xl pb-5 font-londrina'>
         View posts by tag
       </h2>
       <div className='w-full h-px bg-zinc-700' />
-      <article className='mt-5 md:mt-10 flex flex-rows flex-wrap gap-2 sm:gap-5'>
+      <article className='mt-5 md:mt-10 flex flex-rows flex-wrap gap-2 sm:gap-5 text-zinc-100 mx-auto'>
         {tags &&
           tags.map((tag, index) => (
             <Link
@@ -41,6 +41,12 @@ export function ArticlesByTags ({
             </Link>
           ))}
       </article>
+      <iframe
+        src='https://fraineralex.substack.com/embed'
+        width='480'
+        height='120'
+        className='flex mx-auto mt-10'
+      ></iframe>
     </section>
   )
 }
