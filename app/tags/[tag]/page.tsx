@@ -54,11 +54,11 @@ export default async function BlogPage ({ params }: Props) {
   const tagName = params?.tag
   const sortedPosts = allPosts
     .filter(post => post.published && post.tags?.includes(tagName))
-    .sort(
+    /* .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
-    )
+    ) */
   const postKeys = sortedPosts
     .filter(post => post.tags?.includes(tagName))
     .map(post => ['pageviews', 'posts', post?.slug].join(':'))

@@ -1,5 +1,4 @@
 import RSS from 'rss'
-import { format } from 'date-fns'
 import { allPostsDev } from '@/util/monks'
 import { allPosts as allPostsProd } from 'contentlayer/generated'
 const allPosts: typeof allPostsProd =
@@ -19,7 +18,7 @@ export async function GET () {
     site_url: `${site_url}/`,
     feed_url: `${site_url}/feed.xml`,
     image_url: `${site_url}/og.png`,
-    pubDate: format(new Date(lastPostDate), 'EEE, dd MMM yyyy HH:mm:ss xx'),
+    pubDate: lastPostDate,
     language: 'en-US',
     categories: ['tech', 'programming', 'software'],
     custom_elements: [{ 'dc:creator': 'Frainer Encarnación' }]

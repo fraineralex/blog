@@ -37,11 +37,11 @@ export default async function BlogPage () {
         post?.slug !== top2?.slug &&
         post?.slug !== top3?.slug
     )
-    .sort(
+    /* .sort(
       (a, b) =>
         new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
         new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
-    )
+    ) */
 
   sorted.push(featured)
 
