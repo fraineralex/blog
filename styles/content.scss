@@ -54,11 +54,11 @@
   }
 
   blockquote {
-    @apply mt-6 border-l-2 border-zinc-300 pl-6 italic text-zinc-800;
+    @apply mt-6 border-l-2 border-hot-pink pl-6 italic text-zinc-400;
   }
 
   blockquote > * {
-    @apply text-zinc-600;
+    @apply text-zinc-400;
   }
 
   img {

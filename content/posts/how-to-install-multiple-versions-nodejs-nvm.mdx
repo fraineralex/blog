@@ -1,6 +1,6 @@
 ---
 title: "How to Install Multiple Versions of Node.js with NVM"
-description: "In this article, I'll explain how you can install and manage multiple versions of Node.js using Node Version Manager (NVM) on Windows, Linux, and Mac, and easily switch between them with a single command."
+description: "In this article, I'll explain how you can install and manage multiple versions of Node.js using Node Version Manager (NVM) on Windows, Linux, and Mac."
 date: "2024-01-18"
 url: "/"
 hero: "/images/how-to-install-nvm.jpg"
@@ -10,15 +10,13 @@ published: true
 
 In this article, I'll explain how you can install and manage multiple versions of Node.js with Node Version Manager (NVM) on Windows, Linux, and Mac and easily switch between them with a single command.
 
-> Important: This guide assumes that you don't have a previous installation of Node.js. If you do, it might cause issues and conflicts. Before proceeding, make sure you have uninstalled any previous installations of Node.js and npm.
-
 ## **What is NVM?**
 
 Node Version Manager (NVM), as the name implies, is a tool for managing Node versions on your device.
 
 Different projects on your device may be using different versions of Node. Using only one version (the one installed by `npm`) for these different projects may not give you accurate execution results.
 
-For example, if you use a Node version of **18.0.0** for a project that uses 20**.0.0**, you may get some errors. And if you update the Node version to 20**.0.0** with npm and use it for a project that uses **18.0.0**, you may not get the expected experience.
+For example, if you use a Node version of **18.0.0** for a project that uses **20.0.0**, you may get some errors. And if you update the Node version to **20.0.0** with npm and use it for a project that uses **18.0.0**, you may not get the expected experience.
 
 In fact, you would most likely get a warning that says:
 
@@ -31,7 +29,9 @@ Instead of using npm to install and uninstall Node versions for your different p
 
 [NVM](https://github.com/nvm-sh/nvm) allows you to install different versions of Node and switch between these versions depending on the project that you're working on via the command line.
 
-## **How to Install NVM on Mac, Linux, or Windows WSL**
+> **Important:** This guide assumes that you don't have a previous installation of `Node.js`. If you do, it might cause issues and conflicts. Before proceeding, make sure you have uninstalled any previous installations of `Node.js` and `npm`.
+
+## **How to Install NVM on Mac, Linux or Windows WSL**
 
 **This would be the recommended method if your operating system is based on UNIX** (like Mac, Linux, or Windows WSL), as it offers various advantages, such as handling different versions of Node simultaneously.
 
