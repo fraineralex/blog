@@ -59,7 +59,7 @@ export async function GET () {
       title: post.title,
       url: `${site_url}/${post.slug}`,
       date: post.date,
-      description: post.description,
+      description: renderPost(post.body) as string,
       categories: post.tags?.map((tag: string) => tag) || [],
       guid: `${site_url}/${post.slug}`,
       author: 'Frainer Encarnación',
