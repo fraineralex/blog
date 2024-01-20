@@ -13,7 +13,11 @@ const posts = fs
       matter(postContent)
     return { ...data, body: content }
   })
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .sort(
+    (a, b) =>
+      new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
+      new Date(a.date ?? Number.POSITIVE_INFINITY).getTime()
+  )
 
 const renderer = new marked.Renderer()
 
