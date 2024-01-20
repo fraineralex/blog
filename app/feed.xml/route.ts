@@ -17,7 +17,7 @@ export async function GET () {
       "Recent articles from Frainer's Blog. I write about tech, programming and whatever else I'm thinking about!",
     site_url: `${site_url}/`,
     feed_url: `${site_url}/feed.xml`,
-    image_url: `${site_url}/og.png`,
+    image_url: `${site_url}/og.webp`,
     pubDate: lastPostDate,
     language: 'en-US',
     categories: ['tech', 'programming', 'software'],
@@ -35,7 +35,7 @@ export async function GET () {
       author: 'Frainer Encarnación',
       enclosure: {
         url: `${site_url}${post.hero}`,
-        type: `image/${post.hero?.split('.').pop() || 'png'}`
+        type: `image/${post.hero?.split('.').pop() || 'webp'}`
       }
     })
   })

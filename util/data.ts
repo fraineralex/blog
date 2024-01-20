@@ -14,7 +14,7 @@ export const allTags: tag[] = [
   {
     name: 'javascript',
     label: 'JavaScript',
-    image: '/images/tags/javascript.png',
+    image: '/images/tags/javascript.webp',
     description:
       'Javascript is a programming language. Although at first it was designed to provide interactivity to web pages, today its use has extended to the server (with Node.js) or native applications.'
   },
@@ -28,7 +28,7 @@ export const allTags: tag[] = [
   {
     name: 'nodejs',
     label: 'Node.js',
-    image: '/images/tags/node.png',
+    image: '/images/tags/node.webp',
     description:
       'Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. It allows developers to use JavaScript to write command line tools and for server-side scripting—running scripts server-side.'
   },
@@ -42,14 +42,14 @@ export const allTags: tag[] = [
   {
     name: 'python',
     label: 'Python',
-    image: '/images/tags/python.png',
+    image: '/images/tags/python.webp',
     description:
       "Python is a high-level, interpreted programming language with dynamic semantics. It's known for its simple, easy-to-read syntax which emphasizes readability and reduces the cost of program maintenance."
   },
     {
     name: 'typescript',
     label: 'TypeScript',
-    image: '/images/tags/typescript.png',
+    image: '/images/tags/typescript.webp',
     description:
       'TypeScript is a statically typed superset of JavaScript that adds optional types to the language. TypeScript is designed for the development of large applications and transcompiles to JavaScript.'
   },
@@ -63,21 +63,21 @@ export const allTags: tag[] = [
   {
     name: 'css',
     label: 'CSS',
-    image: '/images/tags/css.png',
+    image: '/images/tags/css.webp',
     description:
       'CSS is a styling language that allows us to provide design and representation to our websites and applications.'
   },
   {
     name: 'terminal',
     label: 'Terminal',
-    image: '/images/tags/terminal.png',
+    image: '/images/tags/terminal.webp',
     description:
       'Increasingly, the use of the terminal is more necessary to work on both the backend and the frontend, so having knowledge about it and optimizing its operation is important.'
   },
   {
     name: 'performance',
     label: 'Web Perf',
-    image: '/images/tags/performance.png',
+    image: '/images/tags/performance.webp',
     description:
       'El rendimiento de una web es la percepción de un usuario que la página es rápida y responde correctamente. Para conseguirlo hay muchas buenas prácticas a seguir, técnicas a implementar y trucos que se pueden utilizar aunque a veces es algo que transciende a la parte técnica y debe verse como una mentalidad dentro de una organización o empresa.'
   },
@@ -92,14 +92,14 @@ export const allTags: tag[] = [
   {
     name: 'go',
     label: 'Go',
-    image: '/images/tags/go.png',
+    image: '/images/tags/go.webp',
     description:
       "Go, also known as Golang, is an open-source programming language that's known for its simplicity and efficiency. It was developed by Google and is designed to be easy to use, efficient to compile, and effective at concurrency."
   },
   {
     name: 'career',
     label: 'Career',
-    image: '/images/tags/work.png',
+    image: '/images/tags/work.webp',
     description:
       'Insightful advice and practical tips for advancing your career as developer. Covers goal setting, skill improvement, networking, and strategies for getting hired.'
   }

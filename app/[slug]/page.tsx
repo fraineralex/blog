@@ -84,15 +84,22 @@ export default async function PostPage ({ params }: Props) {
           <h1 className='text-white mb-8'>{post.title}</h1>
         </header>
 
-        <Image
-          className='rounded-xl mx-auto'
-          style={{ minWidth: '80%' }}
-          loading='lazy'
-          src={post.hero}
-          alt={post.title}
-          width={800}
-          height={427}
-        />
+        <figure>
+          <Image
+            className='rounded-xl mx-auto'
+            style={{ minWidth: '80%' }}
+            loading='lazy'
+            src={post.hero}
+            alt={post.title}
+            width={800}
+            height={427}
+          />
+          {post.heroSource && (
+            <figcaption className='text-right text-sm text-zinc-600 pe-8 pt-1 italic'>
+              Source: {post.heroSource}
+            </figcaption>
+          )}
+        </figure>
 
         <small className='text-xs md:text-sm text-zinc-400 flex flex-col font-bold uppercase md:flex-row text-center pb-8 place-content-center py-6 md:px-6'>
           <span className='mb-2 md:mb-0'>

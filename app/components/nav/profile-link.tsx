@@ -71,7 +71,7 @@ export function ProfileLink ({ className }: { className?: string }) {
                     ? 'opacity-70 group-hover:opacity-90'
                     : 'opacity-90 group-hover:opacity-100'
                 }`}
-                src='/images/profile.jpg'
+                src='/images/profile.webp'
                 decoding='async'
                 data-nimg='intrinsic'
                 width={40}
