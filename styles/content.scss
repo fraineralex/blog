@@ -33,11 +33,23 @@
     @apply font-bold text-hot-pink underline underline-offset-4 hover:text-white;
   }
 
+  em, em > * {
+    @apply text-right text-sm text-zinc-600 italic font-normal;
+    a {
+      @apply hover:text-zinc-500
+    }
+  }
+
+  p:has(> em) {
+    /* Estilos para el elemento p que tiene un hijo em */
+    @apply text-right pt-1 pe-5;
+  }
+
   p {
     @apply leading-7;
   }
 
-  p:not(:first-child) {
+  p:not(:first-child, :has(> em)) {
     @apply mt-6;
   }
 
