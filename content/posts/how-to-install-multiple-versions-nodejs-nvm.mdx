@@ -4,14 +4,14 @@ description: "In this article, I'll explain how you can install and manage multi
 date: "2024-01-18"
 url: "/"
 hero: "/images/posts/cover/how-to-install-nvm.webp"
-heroSource: "kinsta.com"
+heroSource: "Source: kinsta.com"
 tags: ["javascript", "nodejs", "terminal"]
 published: true
 ---
 
 In this article, I'll explain how you can install and manage multiple versions of Node.js with Node Version Manager (NVM) on Windows, Linux, and Mac and easily switch between them with a single command.
 
-## **What is NVM?**
+## What is NVM?
 
 Node Version Manager (NVM), as the name implies, is a tool for managing Node versions on your device.
 
@@ -32,11 +32,11 @@ Instead of using npm to install and uninstall Node versions for your different p
 
 > **Important:** This guide assumes that you don't have a previous installation of `Node.js`. If you do, it might cause issues and conflicts. Before proceeding, make sure you have uninstalled any previous installations of `Node.js` and `npm`.
 
-## **How to Install NVM on Mac, Linux or Windows WSL**
+## How to Install NVM on Mac, Linux or Windows WSL
 
 **This would be the recommended method if your operating system is based on UNIX** (like Mac, Linux, or Windows WSL), as it offers various advantages, such as handling different versions of Node simultaneously.
 
-### **1. Run the nvm installer**
+### 1. Run the nvm installer
 
 To install and update _nvm_, you need to execute the installation script. You can download and run the code from the terminal using the following command:
 
@@ -53,7 +53,7 @@ You can use `curl` or `bash` depending on the command available on your device.
 
 This script will clone the [nvm repository](https://github.com/nvm-sh/nvm) into the `~/.nvm` directory and attempt to add the execution lines depending on your terminal language (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
 
-### **2. Update your profile configuration**
+### 2. Update your profile configuration
 
 In case it wasn't possible for some reason, it might ask you to manually add the code lines. **This is only necessary if it couldn't be done automatically.** The lines to add would be these:
 
@@ -67,7 +67,7 @@ After doing this, you may need to restart the terminal or open a new tab to use 
 
 This command above loads nvm for use.
 
-### **3. Reload the shell configuration**
+### 3. Reload the shell configuration
 
 With your profile configuration updated, now you will reload the configuration for your terminal to use:
 
@@ -85,7 +85,7 @@ nvm -v
 
 This should show the version of nvm installed.
 
-## **How to Install NVM on Windows**
+## How to Install NVM on Windows
 
 `nvm-windows`, although sharing the name with `nvm`, is not from the same creators and, therefore, has some differences. And among those differences is, of course, the way to install it. For `nvm-windows`, follow these steps:
 

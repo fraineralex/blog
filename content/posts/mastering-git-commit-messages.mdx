@@ -4,6 +4,7 @@ description: "In this post, I'll show you how to improve your Git commit message
 date: "2024-01-20"
 url: "/"
 hero: "/images/posts/cover/master-git-commit-message.webp"
+heroSource: "Source: Roman Synkevych on Unsplash"
 tags: ["git", "terminal"]
 published: true
 ---
@@ -14,7 +15,7 @@ In this post, I'll show you how to improve your Git commit messages using indust
 
 A `commit` in Git captures a set of changes stored in a project's history, representing a logical unit of work. Commits are pivotal for version control, fostering effective collaboration among developers, organizing update records, and enabling easy rollback to previous versions.
 
-### **Commit Structure**
+### Commit Structure
 
 **Basic:** `git commit -m <message>`
 
@@ -33,8 +34,7 @@ $ git commit -m "Implement user sign-in feature"
 Commits are not just snapshots of code changes; they serve as a roadmap for your project's history. A poorly written commit message can lead to confusion, making it challenging to understand the context of changes. Let's explore why crafting meaningful commit messages matters.
 
 ![Example of wrong commit messages](/images/posts/content/git-commit.webp)
-
-_Source: [xkcd.com](http://xkcd.com/)_
+*Source: [xkcd.com](http://xkcd.com/)*
 
 Think of your commit messages as letters to your future self or collaborators. By investing time in writing informative messages, you create a documentation trail that can save hours of troubleshooting and enhance project maintenance, especially in large-scale projects.
 
@@ -48,7 +48,7 @@ By adhering to good commit practices, you future-proof your work. Clear messages
 
 There are 6 simple rules that will help maintain consistency, clarity, and effectiveness in your commit messages, improving communication within the development team and facilitating code history tracking. These rules are:
 
-### 1. ⚡ **Use Imperative Mood in the Subject Line**
+### 1. Use Imperative Mood in the Subject Line
 
 When crafting a commit message, use the imperative mood in the subject line to convey the action taken. For example, instead of saying "Added feature," use "Add feature" or "Fix bug" rather than "Fixed bug." This provides a clear instruction on the intended state change.
 
@@ -68,7 +68,7 @@ The answer will be something like:
 - Remove a random article
 ```
 
-### 2. 🚫 **Avoid Periods and Ellipses in Commit Messages**
+### 2. Avoid Periods and Ellipses in Commit Messages
 
 Refrain from using unnecessary punctuation in commit messages. The first line of a commit serves as the title and should not end with a period. Additionally, ellipses should be avoided for clear and concise instructions.
 
@@ -79,7 +79,7 @@ git commit -m "Add the new login page" # ✅
 
 ```
 
-### 3. 📏 **Keep the Subject Line Under 50 Characters**
+### 3. Keep the Subject Line Under 50 Characters
 
 Be brief and to the point. If your commit message is too lengthy, consider breaking it down into multiple commits. Ensure that the subject line accurately reflects the changes made.
 
@@ -90,7 +90,7 @@ git commit -m "Update the blog's description in the home page" # ✅
 
 ```
 
-### 4. 📝 **Provide Necessary Context in the Commit Body**
+### 4. Provide Necessary Context in the Commit Body
 
 When additional context is required, use the commit body instead of overcrowding the subject line. This can be achieved by using `git commit` without the `-m` flag.
 
@@ -108,7 +108,7 @@ obsolete now.
 
 Remember that the first commit message line serves as the title, while subsequent lines form the body and should adhere to standard punctuation rules.
 
-### 5. 🏷️ **Use Prefixes for Semantic Commits**
+### 5. Use Prefixes for Semantic Commits
 
 As your project grows, maintaining a readable history becomes crucial. To achieve this, you can add a prefix to give more meaning to the commits you make. This is called semantic commits and is done as follows:
 
@@ -164,7 +164,7 @@ The optional commit body should be used to provide further detail that cannot fi
 
 It is also a good location to utilize `BREAKING CHANGE: <description>` to note the reason for a breaking change within the commit.
 
-### 6. 🛠️ **Consider Using Commit Utilities**
+### 6. Consider Using Commit Utilities
 
 Enhance your commit workflow by incorporating tools like `husky` for executing scripts before specific Git actions and `commitlint` to ensure commits follow a chosen convention. These utilities contribute to a more streamlined and standardized commit process.
 
@@ -204,8 +204,4 @@ By incorporating these rules and tools into your Git workflow, you'll contribute
 
 - [Conventional Commits](https://www.conventionalcommits.org)
 - [Semantic Versioning](https://semver.org)
-
-## References
-
-- Cover photo by [Roman Synkevych](https://unsplash.com/@synkevych?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/black-and-white-penguin-toy-wX2L8L-fGeA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 - [freeCodeCamp.org](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages)

@@ -96,7 +96,7 @@ export default async function PostPage ({ params }: Props) {
           />
           {post.heroSource && (
             <figcaption className='text-right text-sm text-zinc-600 pe-8 pt-1 italic'>
-              Source: {post.heroSource}
+              {post.heroSource}
             </figcaption>
           )}
         </figure>
