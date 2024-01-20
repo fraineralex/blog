@@ -11,7 +11,7 @@ import { marked } from 'marked'
 import matter from 'gray-matter'
 
 const posts = fs
-  .readdirSync(path.resolve(__dirname, '../../content/posts'))
+  .readdirSync('./content/posts')
   .filter(file => path.extname(file) === '.mdx')
   .map(file => {
     const postContent = fs.readFileSync(`./content/posts/${file}`, 'utf8')

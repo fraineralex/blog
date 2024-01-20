@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && pnpm run build-rss",
-    "build-rss": "node -r ./scripts/rss.js",
+    "build": "next build",
     "start": "next start",
     "fmt": "pnpm rome check . --apply-unsafe && pnpm rome format . --write"
   },
