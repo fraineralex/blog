@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "concurrently \"pnpm:build-*\"",
-    "build-next": "next build",
+    "build": "next build && pnpm run build-rss",
     "build-rss": "node -r ./scripts/rss.js",
     "start": "next start",
     "fmt": "pnpm rome check . --apply-unsafe && pnpm rome format . --write"
@@ -43,7 +42,6 @@
     "@types/react": "18.2.46",
     "@types/react-dom": "18.2.18",
     "autoprefixer": "10.4.16",
-    "concurrently": "8.2.2",
     "postcss": "8.4.31",
     "postcss-nesting": "12.0.1",
     "rome": "12.1.3",
