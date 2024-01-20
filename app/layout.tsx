@@ -51,6 +51,12 @@ export const metadata: Metadata = {
   },
   icons: {
     shortcut: '/favicon.ico'
+  },
+  alternates: {
+    types: {
+      // See the RSS Feed section for more details
+      'application/rss+xml': '/feed.xml'
+    }
   }
 }
 

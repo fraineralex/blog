@@ -11,7 +11,7 @@ published: true
 
 In this article, I'll explain how you can install and manage multiple versions of Node.js with Node Version Manager (NVM) on Windows, Linux, and Mac and easily switch between them with a single command.
 
-## What is NVM?
+## 🤔 What is NVM?
 
 Node Version Manager (NVM), as the name implies, is a tool for managing Node versions on your device.
 
@@ -32,7 +32,7 @@ Instead of using npm to install and uninstall Node versions for your different p
 
 > **Important:** This guide assumes that you don't have a previous installation of `Node.js`. If you do, it might cause issues and conflicts. Before proceeding, make sure you have uninstalled any previous installations of `Node.js` and `npm`.
 
-## How to Install NVM on Mac, Linux or Windows WSL
+## 🐧 How to Install NVM on Mac, Linux or Windows WSL
 
 **This would be the recommended method if your operating system is based on UNIX** (like Mac, Linux, or Windows WSL), as it offers various advantages, such as handling different versions of Node simultaneously.
 
@@ -85,7 +85,7 @@ nvm -v
 
 This should show the version of nvm installed.
 
-## How to Install NVM on Windows
+## 🪟 How to Install NVM on Windows
 
 `nvm-windows`, although sharing the name with `nvm`, is not from the same creators and, therefore, has some differences. And among those differences is, of course, the way to install it. For `nvm-windows`, follow these steps:
 
@@ -106,7 +106,7 @@ If nvm was installed correctly, this command will show you the nvm version insta
 
 And with this, we are ready to work with `nvm-windows`. If you encounter any issues, you can **check the [Common Issues section of the repository](https://github.com/coreybutler/nvm-windows/wiki/Common-Issues) to see if your problem has a solution.**
 
-## How NVM Works?
+## 🕹️ How NVM Works?
 
 With nvm installed, you can now install, uninstall, and switch between different Node versions on your Windows, Linux, or Mac device.
 
@@ -129,7 +129,7 @@ nvm install 12.6.0 # this will install exactly version 21.6.0
 
 ```
 
-## Using a Node.js version with nvm
+## 🚀 Using a Node.js Version With NVM
 
 Sometimes you may have more than one installed version of Node.js on your user. To see all the versions of Node.js you have installed, you can use the `nvm ls` command. To see the versions available for installation, you have to use `nvm ls-remote`.
 
@@ -154,7 +154,7 @@ nvm alias default 20
 
 > The first time you run `nvm install`, it will make that version the default.
 
-## Possible problems...
+## ⚠️ Possible Problems
 
 - On Mac, you'll need to have Xcode development tools installed. When you run the `nvm` installation script for the first time, a window may appear asking you to do this. Once installed, try installing `nvm` again with the same script as before.
 - Remember, as I mentioned, after the installation, you may need to restart the terminal or create a new tab before you can run the `nvm` command.
