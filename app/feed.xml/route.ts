@@ -1,10 +1,6 @@
 export const runtime = 'nodejs'
 
 import RSS from 'rss'
-import { allPostsDev } from '@/util/monks'
-import { allPosts as allPostsProd } from 'contentlayer/generated'
-const allPosts: typeof allPostsProd =
-  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
 import fs from 'fs'
 import path from 'path'
 import { marked } from 'marked'
@@ -51,7 +47,7 @@ export async function GET () {
       "Recent articles from Frainer's Blog. I write about tech, programming and whatever else I'm thinking about!",
     site_url: `${site_url}/`,
     feed_url: `${site_url}/feed.xml`,
-    image_url: `${site_url}/og.webp`,
+    image_url: `${site_url}/og.png`,
     pubDate: lastPostDate,
     language: 'en-US',
     categories: ['tech', 'programming', 'software'],

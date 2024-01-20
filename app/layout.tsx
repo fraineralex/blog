@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     title: "Frainer's Blog 📝",
     description:
       "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about!",
-    url: 'fraineralex.com/blog',
+    url: 'https://frainer-blog.vercel.app',
     siteName: 'fraineralex.com',
     images: [
       {
-        url: 'https://frainer-blog.vercel.app/og.webp',
+        url: 'https://frainer-blog.vercel.app/og.png',
         width: 1920,
         height: 1080
       }
