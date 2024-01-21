@@ -3,7 +3,7 @@ import { allTags } from '@/util/data'
 interface Props {
   hero: string
   heroSource?: string
-  title: string
+  title?: string
   tags: string[]
   date: string
   readTime: string
@@ -23,12 +23,7 @@ export function RSSHeader ({
       : 'http://localhost:3000'
 
   return `
-    <article>
-      <header style="margin-left: auto; margin-right: auto; text-align: center; padding-top: 1.25rem">
-      <h1 style="text-wrap: balance; font-size: 90; margin-bottom: 2rem; text-transform: uppercase; font-weight: 800; line-height: 1; font-family: fantasy, sans-serif;">
-        ${title}
-      </h1>
-      </header>
+    <header>
       <figure>
         <img
           alt="${title}"
@@ -36,7 +31,7 @@ export function RSSHeader ({
           decoding="async"
           data-nimg="1"
           src="${site_url}${hero}"
-          style="color: transparent; min-width: 80%; border-radius: .75rem; margin-left: auto; margin-right: auto; width: 100%; height: auto;"
+          style="margin-top: 2rem; color: transparent; min-width: 80%; border-radius: .75rem; margin-left: auto; margin-right: auto; width: 100%; height: auto;"
         />
         <figcaption style=" text-align: right; font-size: 0.875rem; line-height: 1.25rem; padding-inline-end: 2rem; color: darkgray; padding-inline-end: 2rem; padding-top: 0.25rem;  font-style: italic;">
           ${heroSource}
@@ -71,6 +66,6 @@ export function RSSHeader ({
             .join('')}
           </span>
       </p>  
-    </article>
+    </header>
   `
 }
