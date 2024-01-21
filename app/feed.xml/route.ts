@@ -5,6 +5,7 @@ import fs from 'fs'
 import path from 'path'
 import { marked } from 'marked'
 import matter from 'gray-matter'
+import { RSSHeader } from '../components/content/rss-header'
 
 const posts = fs
   .readdirSync('./content/posts')
@@ -55,19 +56,34 @@ export async function GET () {
   })
 
   posts.map(post => {
+    const readTime = Math.ceil(post.body.split(/\s+/).length / 200).toString()
+
+    const props = {
+      hero: post.hero,
+      heroSource: post.heroSource || '',
+      title: post.title,
+      tags: post.tags,
+      date: post.date,
+      readTime: readTime
+    }
+
+    const articleHeader = RSSHeader(props)
+    const htmlArticle = `${articleHeader}<article style="text-wrap: balance;">${renderPost(
+      post.body
+    )}</article>`
+
     feed.item({
       title: post.title,
       url: `${site_url}/${post.slug}`,
       date: post.date,
-      description: renderPost(post.body) as string,
+      description: htmlArticle as string,
       categories: post.tags?.map((tag: string) => tag) || [],
       guid: `${site_url}/${post.slug}`,
       author: 'Frainer Encarnación',
       enclosure: {
         url: `${site_url}${post.hero}`,
         type: `image/${post.hero?.split('.').pop() || 'webp'}`
-      },
-      custom_elements: [{ 'content:encoded': renderPost(post.body) }]
+      }
     })
   })
 
