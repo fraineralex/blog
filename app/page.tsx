@@ -61,7 +61,7 @@ export default async function BlogPage () {
       <Navigation />
       <div className='px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-26'>
         <header className='mx-auto max-w-2xl text-center content'>
-          <h1 className='font-bold text-zinc-100 font-londrina pb-2 md:pb-3'>
+          <h1 className='pb-2 md:pb-3'>
             {' '}
             {thereAreFourPosts ? 'Blog Posts' : 'Articles'}
           </h1>
@@ -157,7 +157,7 @@ export default async function BlogPage () {
         )}
 
         <div className='grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3'>
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 animate-fade-up-one'>
             {sorted
               .filter((_, i) => i % 3 === 0)
               .map((post, index) => (
@@ -168,7 +168,7 @@ export default async function BlogPage () {
                 />
               ))}
           </div>
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 animate-fade-up-two'>
             {sorted
               .filter((_, i) => i % 3 === 1)
               .map((post, index) => (
@@ -179,7 +179,7 @@ export default async function BlogPage () {
                 />
               ))}
           </div>
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 animate-fade-up-three'>
             {sorted
               .filter((_, i) => i % 3 === 2)
               .map((post, index) => (

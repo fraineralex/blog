@@ -6,6 +6,7 @@ import { Eye, View } from 'lucide-react'
 import Image from 'next/image'
 import { Card } from './card'
 import React, { useState, useEffect, useRef } from 'react'
+import './article.css'
 
 type Props = {
   post: Post
