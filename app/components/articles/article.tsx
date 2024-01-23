@@ -49,7 +49,7 @@ export const Article: React.FC<Props> = ({ post, views, isTopArticle }) => {
       <Card className={`${isTopArticle ? 'col-span-6' : ''}`}>
         <article className={`p-4 md:p-8 ${isTopArticle ? 'col-span-6' : ''}`}>
           <div className='flex justify-between gap-2 items-center'>
-            <span className='text-xs duration-1000 text-zinc-200 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange'>
+            <span className='text-xs duration-1000 text-zinc-300 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange'>
               {post?.date ? (
                 <time dateTime={new Date(post.date).toISOString()}>
                   {Intl.DateTimeFormat(undefined, {
@@ -67,7 +67,7 @@ export const Article: React.FC<Props> = ({ post, views, isTopArticle }) => {
               )}
             </span>
           </div>
-          <h2 className='z-20 text-xl font-bold duration-1000 lg:text-3xl text-zinc-200 group-hover:text-white font-londrina'>
+          <h2 className='z-20 text-xl font-bold duration-1000 lg:text-3xl text-zinc-300 group-hover:text-zinc-100 font-londrina'>
             {post?.title}
           </h2>
           <p className='z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200'>

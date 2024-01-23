@@ -61,9 +61,8 @@ export async function GET () {
     const props = {
       hero: post.hero,
       heroSource: post.heroSource || '',
-      title: post.title,
       tags: post.tags,
-      date: post.date,
+      date: post.updated || post.date,
       readTime: readTime
     }
 
@@ -75,7 +74,7 @@ export async function GET () {
     feed.item({
       title: post.title,
       url: `${site_url}/${post.slug}`,
-      date: post.date,
+      date: post.updated || post.date,
       description: htmlArticle as string,
       categories: post.tags?.map((tag: string) => tag) || [],
       guid: `${site_url}/${post.slug}`,
