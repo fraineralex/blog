@@ -32,24 +32,25 @@ export const Article: React.FC<Props> = ({ post, views, isTopArticle }) => {
     <Link
       ref={containerRef}
       href={`/${post?.slug}`}
-      className={`bg-gradient-to-br opacity-100  via-zinc-100/10 overflow-hidden relative border rounded-xl hover:bg-zinc-800/10 group hover:border-zinc-400/50 border-zinc-600 ${
+      className={`bg-gradient-to-br opacity-100  via-zinc-100/10 overflow-hidden relative border rounded-xl hover:bg-zinc-800/10 group hover:border-zinc-200/50 border-zinc-600 lg:hover:transform lg:hover:-translate-y-2 transition-all duration-300 ease-in-out ${
         isTopArticle ? 'relative grid grid-cols-8 ' : 'md:gap-0'
       }`}
     >
       <Image
         style={imageStyles}
         className={`squiggle z-50 ${
-          isTopArticle ? ' h-full md:h-auto col-span-2' : ''
-        }`}
+          isTopArticle ? 'h-full md:h-auto col-span-2' : ''
+        } transform transition-transform group-hover:scale-110`}
         src={post.hero}
         alt={post.title}
         width='360'
         height='192'
       />
+
       <Card className={`${isTopArticle ? 'col-span-6' : ''}`}>
         <article className={`p-4 md:p-8 ${isTopArticle ? 'col-span-6' : ''}`}>
           <div className='flex justify-between gap-2 items-center'>
-            <span className='text-xs duration-1000 text-zinc-300 group-hover:text-white group-hover:border-zinc-200 drop-shadow-orange'>
+            <span className='text-xs duration-1000 text-zinc-300 group-hover:text-zinc-200 group-hover:border-zinc-200 drop-shadow-orange'>
               {post?.date ? (
                 <time dateTime={new Date(post.date).toISOString()}>
                   {Intl.DateTimeFormat(undefined, {
@@ -60,7 +61,7 @@ export const Article: React.FC<Props> = ({ post, views, isTopArticle }) => {
                 <span>SOON</span>
               )}
             </span>
-            <span className='text-zinc-500 text-xs  flex items-center gap-1'>
+            <span className='text-zinc-500 text-xs  flex items-center gap-1 group-hover:text-zinc-400'>
               <Eye className='w-4 h-4' />{' '}
               {Intl.NumberFormat('en-US', { notation: 'compact' }).format(
                 views
@@ -70,7 +71,7 @@ export const Article: React.FC<Props> = ({ post, views, isTopArticle }) => {
           <h2 className='z-20 text-xl font-bold duration-1000 lg:text-3xl text-zinc-300 group-hover:text-zinc-100 font-londrina'>
             {post?.title}
           </h2>
-          <p className='z-20 mt-4 text-sm  duration-1000 text-zinc-400 group-hover:text-zinc-200'>
+          <p className='z-20 mt-4 text-sm duration-1000 text-zinc-400 group-hover:text-zinc-300'>
             {post?.description}
           </p>
         </article>

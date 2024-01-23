@@ -3,6 +3,7 @@ import { ReactIcon } from '../common/svg-icons'
 import Image from 'next/image'
 import { displayTags, allTags } from '@/util/data'
 import React from 'react'
+import './tags.css'
 
 export function ArticlesByTags ({
   displayAllTags
