@@ -30,3 +30,92 @@
   [data-rehype-pretty-code-title] + pre {
     @apply mt-0;
   }
+
+  @keyframes reveal-img {
+    from {
+      opacity: 0;
+      clip-path: inset(45% 20% 45% 20%);
+    }
+
+    to {
+      opacity: 1;
+      clip-path: inset(0% 0% 0% 0%);
+    }
+  }
+
+  @keyframes reveal-titles {
+    0% {
+        opacity: 0;
+        translate: 0 50px;
+        scale: 1.4
+    }
+
+    50% {
+        opacity: .1
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+        translate: 0 0
+    }
+}
+
+@keyframes reveal-text {
+  0% {
+      opacity: 0;
+  }
+
+  50% {
+      opacity: .1
+  }
+
+  to {
+      opacity: 1;
+  }
+}
+
+.content {
+  && img {
+    view-timeline-name: --reveling-image;
+    view-timeline-axis: block;
+
+    animation: linear reveal-img both;
+    animation-timeline: --reveling-image;
+
+    animation-range: entry 5% cover 30%;
+  }
+
+  && pre {
+    view-timeline-name: --reveling-code;
+    view-timeline-axis: block;
+
+    animation: linear reveal-img both;
+    animation-timeline: --reveling-code;
+
+    animation-range: entry 5% cover 20%;
+  }
+
+  && p, h2, h3, h4, h5, h6, small, span, li, a {
+
+    view-timeline-name: --reveling-text;
+    view-timeline-axis: block;
+    
+    animation: linear reveal-text both;
+    animation-timeline: --reveling-text;
+    
+    animation-range: entry 5% cover 20%;
+  }
+}
+
+.subscribe {
+
+    view-timeline-name: --reveling-subscribe;
+    view-timeline-axis: block;
+    
+    animation: linear reveal-titles both;
+    animation-timeline: --reveling-subscribe;
+    
+    animation-range: entry 5% cover 30%;
+  
+}

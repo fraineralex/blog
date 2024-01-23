@@ -3,6 +3,7 @@
     @apply uppercase font-bold leading-none font-londrina text-white;
 
     font-size: min(max(3rem, 6.25vw), 7rem);
+    text-wrap: balance;
 
     @supports (font-size: clamp(3rem, 6.25vw, 7rem)) {
       font-size: clamp(3rem, 6.25vw, 7rem);
@@ -10,26 +11,32 @@
   }
 
   h2 {
+    text-wrap: balance;
     @apply mt-10 scroll-m-20 border-b border-b-zinc-300 pb-1 text-3xl font-semibold tracking-tight first:mt-0 font-calsans text-white;
   }
 
   h3 {
+    text-wrap: balance;
     @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight text-zinc-100;
   }
 
   h4 {
+    text-wrap: balance;
     @apply mt-8 scroll-m-20 text-xl font-semibold tracking-tight text-zinc-100;
   }
 
   h5 {
+    text-wrap: balance;
     @apply mt-8 scroll-m-20 text-lg font-semibold tracking-tight text-zinc-100;
   }
 
   h6 {
+    text-wrap: balance;
     @apply mt-8 scroll-m-20 text-base font-semibold tracking-tight text-zinc-100;
   }
 
   a {
+    text-wrap: balance;
     @apply font-bold text-hot-pink underline underline-offset-4 hover:text-white;
   }
 
@@ -46,6 +53,7 @@
   }
 
   p {
+    text-wrap: pretty;
     @apply leading-7;
   }
 
