@@ -12,7 +12,7 @@ export function ArticlesByTags ({
 }) {
   const tags = displayAllTags ? allTags : displayTags
   return (
-    <section className='lg:mx-0 w-full'>
+    <section className='lg:mx-0 w-full animate-tags-section'>
       <h2 className='font-londrina text-3xl font-bold tracking-wide text-zinc-500 sm:text-4xl pb-5'>
         View posts by tag
       </h2>

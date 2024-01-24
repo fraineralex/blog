@@ -34,7 +34,7 @@
   }
 }
 
-section {
+.animate-tags-section {
   && h2,
   div {
     view-timeline-name: --reveling-section;
