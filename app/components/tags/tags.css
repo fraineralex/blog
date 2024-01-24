@@ -37,11 +37,11 @@
 section {
   && h2,
   div {
-    view-timeline-name: --reveling-title;
+    view-timeline-name: --reveling-section;
     view-timeline-axis: block;
 
     animation: linear reveal-section both;
-    animation-timeline: --reveling-title;
+    animation-timeline: --reveling-section;
 
     animation-range: entry 5% cover 20%;
   }
