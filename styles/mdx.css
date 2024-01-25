@@ -1,5 +1,5 @@
 [data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black font-bold;
   counter-reset: line;
   box-decoration-break: clone;
 }
@@ -103,7 +103,6 @@
   h5,
   h6,
   small,
-  span,
   li,
   a {
     view-timeline-name: --reveling-content;
