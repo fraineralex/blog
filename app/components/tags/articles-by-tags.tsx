@@ -3,7 +3,7 @@ import { ReactIcon } from '../common/svg-icons'
 import Image from 'next/image'
 import { displayTags, allTags } from '@/util/data'
 import React from 'react'
-import './tags.css'
+import '@/styles/tags.css'
 
 export function ArticlesByTags ({
   displayAllTags
@@ -23,7 +23,7 @@ export function ArticlesByTags ({
             <Link
               key={index}
               href={`/tags/${tag.name}`}
-              className='border-2 border-zinc-400 group hover:border-zinc-100 items-center rounded-full flex h-8 text-sm px-3 sm:h-14 sm:text-xl sm:px-6 relative transition-all mb-1 md:mb-0'
+              className='border-2 border-zinc-400 group hover:border-zinc-100 items-center rounded-full flex h-8 text-sm px-3 sm:h-12 sm:text-xl sm:px-6 relative transition-all mb-1 md:mb-0'
             >
               {tag.name === 'react' ? (
                 <ReactIcon className='h-3 w-3 sm:h-7 sm:w-7 text-[#149ECA] opacity-90 group-hover:opacity-100 block align-middle max-w-full' />

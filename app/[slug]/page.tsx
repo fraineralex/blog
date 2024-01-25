@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Mdx } from '@/app/components/articles/mdx'
 import { Header } from '../components/content/header'
-import '../components/content/mdx.css'
+import '@/styles/mdx.css'
 import { ReportView } from '../components/content/view'
 import { Redis } from '@upstash/redis'
 import Image from 'next/image'

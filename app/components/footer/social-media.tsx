@@ -1,6 +1,6 @@
 import { Instagram, Rss } from 'lucide-react'
 import Link from 'next/link'
-import './footer.css'
+import '@/styles/footer.css'
 
 export default function SocialMedia () {
   return (
