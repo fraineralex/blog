@@ -63,6 +63,6 @@
     animation: linear reveal-section both;
     animation-timeline: --reveling-iframe;
 
-    animation-range: entry 5% cover 30%;
+    animation-range: entry 5% cover 20%;
   }
 }
