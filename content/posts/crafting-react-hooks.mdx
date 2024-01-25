@@ -10,7 +10,7 @@ published: true
 
 In this article, I will reveal in a clear and simplified way how React Hooks can work magic in your projects, just as I would have liked to learn when I discovered them.
 
-## 🪝 Hooks: The Magic of React
+### 🪝 Hooks: The Magic of React
 
 In React, hooks are utilities that allow us to execute arbitrary code in our components based on specific actions. Hooks provide a way to reuse state and side-effect logic in functional components in a simpler and more declarative manner.
 
@@ -22,7 +22,7 @@ This reference guide will discuss all the Hooks natively available in React, but
 
 ![React basic hooks image](https://frainer-blog.vercel.app/images/posts/content/basic-hooks.webp)
 
-### ⚡ useState
+## ⚡ useState
 
 It is a hook that allows functional components to manage and maintain their internal state. You can use it to declare state variables and access them in your functional components.
 
@@ -86,7 +86,7 @@ export function XFollowCard({ fullName, userName, initialIsFollowing }: Props) {
 
 ```
 
-### 🎬 useEffect
+## 🎬 useEffect
 
 It is a React hook that allows performing side effects in functional components. You can use it to execute code in response to changes in the component, such as making API requests, subscribing to events, or updating the DOM. **`useEffect`** receives a function as an argument and executes it after the component is rendered or when certain dependencies change.
 
@@ -126,7 +126,7 @@ export function useCatImage({ fact }: { fact: string }) {
 
 ```
 
-**🧹 Cleaning up an effect**
+### 🧹 Cleaning up an effect
 
 Some imperative code need to be cleaned up e.g. to prevent memory leaks. For example, subscriptions need to be cleaned up, timers need to be invalidated etc. To do this return a function from the callback passed to `useEffect`:
 
@@ -143,7 +143,7 @@ useEffect(() => {
 
 The clean-up function is guaranteed to be invoked before the component is removed from the user interface.
 
-⚠️ **Avoid Infinite Loops**
+### ⚠️ Avoid Infinite Loops
 
 When using `useEffect` in React, it's crucial to avoid infinite loops that can arise from incorrect effect configurations. One common mistake is modifying the state within the effect body in a way that triggers infinite renderings.
 
@@ -158,7 +158,7 @@ useEffect(() => {
 
 This example causes an infinite loop by updating the state within the effect, triggering new renderings and re-executing the effect.
 
-**✅ Solution**
+### ✅ Solution
 
 ```tsx
 useEffect(() => {
@@ -169,11 +169,11 @@ useEffect(() => {
 
 Avoid infinite loops by ensuring that the dependencies in the `useEffect` dependency array are stable and do not change within the effect body. In this case, by removing `count` from the dependency array, we prevent the infinite loop.
 
-### 🤝 useContext
+## 🤝 useContext
 
 The problem that **`useContext`** solves lies in the need to pass data through the component hierarchy without resorting to prop drilling, which is when props are manually passed through multiple levels of components. This approach can become cumbersome and impractical as the application grows, as each intermediate component has to relay the props, generating less clean and error-prone code.
 
-**❌ Prop Drilling: The Challenge**
+### ❌ Prop Drilling: The Challenge
 
 Imagine a scenario where we have a **`ComponentA`** that needs to pass data to **`ComponentD`**. Traditional prop drilling would involve passing the props through all intermediate components, even if **`ComponentB`** and **`ComponentC`** do not need that data.
 
@@ -202,7 +202,7 @@ const ComponentD = ({ dataForD }: Props) => {
 
 This process, known as prop drilling, can become unmanageable and complicated as more components are added to the hierarchy.
 
-**✅ Solution: `useContext` to the Rescue**
+### ✅ Solution: `useContext` to the Rescue
 
 **`useContext`** greatly simplifies this task by allowing us to create and consume a context without manually passing props through each component. First, we create a context using **`createContext`**:
 
@@ -255,7 +255,7 @@ The following hooks are variants of the basic hooks discussed in the sections ab
 
 ![React additional hooks image](https://frainer-blog.vercel.app/images/posts/content/additional-hooks.webp)
 
-### 📌 useRef
+## 📌 useRef
 
 **`useRef`** in React is a hook that makes it easy to create mutable references. Unlike **`useState`**, **`useRef`** doesn't trigger component re-renders when its value changes, making it a powerful tool for holding data that doesn't directly affect the user interface.
 
@@ -271,7 +271,7 @@ const MyComponent = () => {
 
 ```
 
-**🥷🏻 Challenge**
+### 🥷🏻 Challenge
 
 The problem that **`useRef`** solves becomes apparent when we need to update values without triggering a visual representation update of the component. To illustrate this, let's consider a movie search scenario:
 
@@ -336,7 +336,7 @@ export function useMovies({ search }: { search: string }) {
 
 With this implementation, **`useRef`** helps manage the value of **`search`** without causing unwanted visual updates, improving efficiency and the user experience.
 
-### 🧠 useMemo
+## 🧠 useMemo
 
 The `useMemo` hook in React is a powerful tool for optimizing performance by memorizing the result of a function. Its main purpose is to prevent unnecessary computations, reusing the previously calculated value if the dependencies haven't changed.
 
@@ -387,7 +387,7 @@ export function Counter({ count }: { count: number }) {
 
 With `useMemo`, if the `count` prop hasn't changed, the recalculation of double is avoided, and the previously calculated value is reused. This significantly improves the efficiency of the component, especially in situations where calculations are more resource-intensive.
 
-### ♻️ useCallback
+## ♻️ useCallback
 
 The **`useCallback`** hook in React provides a way to memorize functions. The main advantage is to avoid creating new functions on each render, returning the previously memorized function if the dependencies haven't changed.
 
@@ -437,7 +437,7 @@ export function Counter({ count, onIncrement }: Props) {
 
 With **`useCallback`**, if **`count`** or **`onIncrement`** haven't changed, creating a new function is avoided, and the previously calculated function is reused. This improves efficiency and contributes to a more optimal component performance.
 
-### 🏷️ useId
+## 🏷️ useId
 
 `useId` is a React hook designed to generate unique identifiers, ideal for assigning them to HTML tag attributes. This practice becomes especially useful for improving accessibility by establishing specific relationships between elements.
 
@@ -498,7 +498,7 @@ export default function App() {
 
 In the `App` component, where `PasswordField` is used twice, `useId` ensures that automatically generated identifiers avoid duplicates and provide a robust solution for assigning unique IDs in repeated contexts. This contributes to improving accessibility and consistency in the application.
 
-### 🕹️ useReducer
+## 🕹️ useReducer
 
 `useReducer` is a React hook designed to manage the state of a component using an action-based and reduction-oriented approach, similar to the pattern used in Redux. This hook becomes preferable over **`useState`** when the state of a component is more complex or when state updates depend on the previous state or previous actions.
 
@@ -571,7 +571,7 @@ export const Counter = () => {
 
 `useImperativeHandle` in React is a handy tool when you need to control and customize the external interface of a functional component, especially when working with refs. Imagine the challenge you would face without this hook.
 
-🤔 **Challenge Without `useImperativeHandle`:**
+### 🤔 Challenge Without `useImperativeHandle`:
 
 Let's assume we have a functional component called `FancyInput` that encapsulates a text input. We want the parent component to access and manipulate the input value directly and also trigger focus on that input. Without `useImperativeHandle`, we might end up with less efficient and error-prone code.
 
@@ -597,7 +597,7 @@ export const FancyInput = () => {
 
 In this scenario, exposing the `focusInput` method to the parent component would be a challenging and inelegant task. This is where `useImperativeHandle` comes into play.
 
-✅ **Solution with `useImperativeHandle`:**
+### ✅ Solution with `useImperativeHandle`:
 
 ```tsx
 export const FancyInput = forwardRef((props, ref) => {
@@ -625,11 +625,11 @@ export const FancyInput = forwardRef((props, ref) => {
 
 With `useImperativeHandle`, we can now selectively expose the functions we want the parent component to use. This solution improves code clarity and provides a more efficient and controlled external interface.
 
-### 🧩 useLayoutEffect
+## 🧩 useLayoutEffect
 
 `useLayoutEffect` in React is a powerful hook that allows you to perform synchronous operations after all mutations to the DOM have been completed but before the browser repaints the screen. Imagine the challenge you would face without this hook.
 
-🤔 **Challenge Without `useLayoutEffect`:**
+### 🤔 Challenge Without `useLayoutEffect`:
 
 Imagine a scenario where we want to measure the dimensions of a DOM element and, based on those dimensions, perform certain actions in our functional component `ResizableBox`. Without `useLayoutEffect`, we could face issues when making these measurements asynchronously.
 
@@ -651,7 +651,7 @@ export const ResizableBox = () => {
 
 In this scenario, performing synchronous measurements of the dimensions of `boxRef` is challenging with `useEffect` because the measurements may not be available immediately. This is where `useLayoutEffect` comes into play.
 
-**✅ Solution with `useLayoutEffect`:**
+### ✅ Solution with `useLayoutEffect`:
 
 ```tsx
 export const ResizableBox = () => {
@@ -672,7 +672,7 @@ export const ResizableBox = () => {
 
 With `useLayoutEffect`, we can perform synchronous measurements after the browser has completed all mutations to the DOM but before repainting the screen. This ensures that measurements are available immediately and avoids potential issues related to asynchrony.
 
-### 🐞 useDebugValue
+## 🐞 useDebugValue
 
 `useDebugValue` in React is a specialized hook designed to enhance the debugging experience by providing additional information about the state of a component. Its main utility is to facilitate component identification in browser development tools.
 
@@ -686,7 +686,7 @@ When debugging a React application, it's common to face the challenge of quickly
 
 **Here’s how the `useDebugValue` hook is used:**
 
-1. **Adding a Descriptive Name:**
+### 1. Adding a Descriptive Name:
 
 ```tsx
 import { useDebugValue } from 'react'
@@ -703,7 +703,7 @@ const useCustomHook = () => {
 
 ```
 
-2. **Displaying Array Content:**
+### 2. Displaying Array Content:
 
 ```tsx
 import { useDebugValue } from 'react'
@@ -719,7 +719,7 @@ const useArrayHook = (array: string[]) => {
 
 ```
 
-3. **Using State Information:**
+### 3. Using State Information:
 
 ```tsx
 import { useState, useDebugValue } from 'react'
@@ -741,11 +741,11 @@ By using `useDebugValue`, you can customize the information displayed about your
 
 In this exploration of React Hooks, from the most basic concepts to the most advanced, I trust you have discovered the fascinating world that these hooks offer to simplify and empower your developments in React. Happy coding! ✨
 
-## 🔗 References
+### 🔗 References
 
 - https://react.dev/reference/react
 - [https://www.youtube.com/@midulive](https://youtube.com/playlist?list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29&si=38k-uyCK8hlf7DIk)
 
-## 🌐 Additional Resources
+### 🌐 Additional Resources
 
 - [React Hooks Documentation: An Easy to Read Version](https://blog.logrocket.com/react-hooks-cheat-sheet-solutions-common-problems/)

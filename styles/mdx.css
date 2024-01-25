@@ -111,7 +111,7 @@
     animation: linear reveal-content both;
     animation-timeline: --reveling-content;
 
-    animation-range: entry 5% cover 20%;
+    animation-range: entry 5% cover 10%;
   }
 }
 
@@ -122,5 +122,5 @@
   animation: linear reveal-content-titles both;
   animation-timeline: --reveling-subscribe;
 
-  animation-range: entry 5% cover 30%;
+  animation-range: entry 5% cover 25%;
 }
