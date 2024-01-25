@@ -88,7 +88,7 @@ export function XFollowCard({ fullName, userName, initialIsFollowing }: Props) {
 
 ## 🎬 useEffect
 
-It is a React hook that allows performing side effects in functional components. You can use it to execute code in response to changes in the component, such as making API requests, subscribing to events, or updating the DOM. **`useEffect`** receives a function as an argument and executes it after the component is rendered or when certain dependencies change.
+It is a React hook that allows performing side effects in functional components. You can use it to execute code in response to changes in the component, such as making API requests, subscribing to events, or updating the DOM. `useEffect` receives a function as an argument and executes it after the component is rendered or when certain dependencies change.
 
 The basic signature of `useEffect` is as follows:
 
@@ -171,11 +171,11 @@ Avoid infinite loops by ensuring that the dependencies in the `useEffect` depend
 
 ## 🤝 useContext
 
-The problem that **`useContext`** solves lies in the need to pass data through the component hierarchy without resorting to prop drilling, which is when props are manually passed through multiple levels of components. This approach can become cumbersome and impractical as the application grows, as each intermediate component has to relay the props, generating less clean and error-prone code.
+The problem that `useContext` solves lies in the need to pass data through the component hierarchy without resorting to prop drilling, which is when props are manually passed through multiple levels of components. This approach can become cumbersome and impractical as the application grows, as each intermediate component has to relay the props, generating less clean and error-prone code.
 
 ### ❌ Prop Drilling: The Challenge
 
-Imagine a scenario where we have a **`ComponentA`** that needs to pass data to **`ComponentD`**. Traditional prop drilling would involve passing the props through all intermediate components, even if **`ComponentB`** and **`ComponentC`** do not need that data.
+Imagine a scenario where we have a `ComponentA` that needs to pass data to `ComponentD`. Traditional prop drilling would involve passing the props through all intermediate components, even if `ComponentB` and `ComponentC` do not need that data.
 
 ```tsx
 // ComponentA.tsx
@@ -204,7 +204,7 @@ This process, known as prop drilling, can become unmanageable and complicated as
 
 ### ✅ Solution: `useContext` to the Rescue
 
-**`useContext`** greatly simplifies this task by allowing us to create and consume a context without manually passing props through each component. First, we create a context using **`createContext`**:
+`useContext` greatly simplifies this task by allowing us to create and consume a context without manually passing props through each component. First, we create a context using `createContext`:
 
 ```tsx
 // ThemeContext.ts
@@ -212,7 +212,7 @@ import { createContext } from 'react'
 export const ThemeContext = createContext()
 ```
 
-Then, we use the **`Provider`** component to wrap our component tree with the desired value:
+Then, we use the `Provider` component to wrap our component tree with the desired value:
 
 ```tsx
 // App.tsx
@@ -229,7 +229,7 @@ const App = () => {
 
 ```
 
-Finally, in any component within this context, we can use **`useContext`** to access the data without manually passing props:
+Finally, in any component within this context, we can use `useContext` to access the data without manually passing props:
 
 ```tsx
 // Button.tsx
@@ -245,7 +245,7 @@ export const Button = () => {
 
 > Note that the value passed to useContext must be the context object, i.e., the return value from invoking React.createContext, not ContextObject.Provider or ContextObject.Consumer.
 
-This solution avoids the cumbersome prop drilling and provides a cleaner and more efficient way to share data across components in a React application. **`useContext`** makes data management more elegant and easy to maintain.
+This solution avoids the cumbersome prop drilling and provides a cleaner and more efficient way to share data across components in a React application. `useContext` makes data management more elegant and easy to maintain.
 
 Goodbye, prop drilling! 👋
 
@@ -257,7 +257,7 @@ The following hooks are variants of the basic hooks discussed in the sections ab
 
 ## 📌 useRef
 
-**`useRef`** in React is a hook that makes it easy to create mutable references. Unlike **`useState`**, **`useRef`** doesn't trigger component re-renders when its value changes, making it a powerful tool for holding data that doesn't directly affect the user interface.
+`useRef` in React is a hook that makes it easy to create mutable references. Unlike `useState`, `useRef` doesn't trigger component re-renders when its value changes, making it a powerful tool for holding data that doesn't directly affect the user interface.
 
 Here’s how the `useRef` hook is used:
 
@@ -273,7 +273,7 @@ const MyComponent = () => {
 
 ### 🥷🏻 Challenge
 
-The problem that **`useRef`** solves becomes apparent when we need to update values without triggering a visual representation update of the component. To illustrate this, let's consider a movie search scenario:
+The problem that `useRef` solves becomes apparent when we need to update values without triggering a visual representation update of the component. To illustrate this, let's consider a movie search scenario:
 
 ```tsx
 export function useMovies({ search }: { search: string }) {
@@ -303,7 +303,7 @@ export function useMovies({ search }: { search: string }) {
 
 ```
 
-In this case, using **`useState`** for the search term causes unnecessary renderings every time the search term changes. This is where **`useRef`** becomes an efficient solution by allowing us to update **`search`** without affecting the user interface:
+In this case, using `useState` for the search term causes unnecessary renderings every time the search term changes. This is where `useRef` becomes an efficient solution by allowing us to update `search` without affecting the user interface:
 
 ```tsx
 export function useMovies({ search }: { search: string }) {
@@ -334,7 +334,7 @@ export function useMovies({ search }: { search: string }) {
 
 ```
 
-With this implementation, **`useRef`** helps manage the value of **`search`** without causing unwanted visual updates, improving efficiency and the user experience.
+With this implementation, `useRef` helps manage the value of `search` without causing unwanted visual updates, improving efficiency and the user experience.
 
 ## 🧠 useMemo
 
@@ -389,7 +389,7 @@ With `useMemo`, if the `count` prop hasn't changed, the recalculation of double 
 
 ## ♻️ useCallback
 
-The **`useCallback`** hook in React provides a way to memorize functions. The main advantage is to avoid creating new functions on each render, returning the previously memorized function if the dependencies haven't changed.
+The `useCallback` hook in React provides a way to memorize functions. The main advantage is to avoid creating new functions on each render, returning the previously memorized function if the dependencies haven't changed.
 
 Here’s how the `useCallback` hook is used:
 
@@ -397,7 +397,7 @@ Here’s how the `useCallback` hook is used:
 const memoizedCallback = useCallback(callback, arrayDependency)
 ```
 
-The problem that **`useCallback`** addresses becomes apparent when we need to pass functions to child components and want to avoid creating new instances of those functions on each render. Let's take the example of the **`Counter`** component:
+The problem that `useCallback` addresses becomes apparent when we need to pass functions to child components and want to avoid creating new instances of those functions on each render. Let's take the example of the `Counter` component:
 
 ```tsx
 function Counter({ count, onIncrement }: Props) {
@@ -415,7 +415,7 @@ function Counter({ count, onIncrement }: Props) {
 
 ```
 
-In this case, **`handleIncrement`** is recreated on every render, which is not efficient, especially if **`onIncrement`** and **`count`** haven't changed. **`useCallback`** addresses this by memorizing the function only when the dependencies change:
+In this case, `handleIncrement` is recreated on every render, which is not efficient, especially if `onIncrement` and `count` haven't changed. `useCallback` addresses this by memorizing the function only when the dependencies change:
 
 ```tsx
 import { useCallback } from 'react'
@@ -435,7 +435,7 @@ export function Counter({ count, onIncrement }: Props) {
 
 ```
 
-With **`useCallback`**, if **`count`** or **`onIncrement`** haven't changed, creating a new function is avoided, and the previously calculated function is reused. This improves efficiency and contributes to a more optimal component performance.
+With `useCallback`, if `count` or `onIncrement` haven't changed, creating a new function is avoided, and the previously calculated function is reused. This improves efficiency and contributes to a more optimal component performance.
 
 ## 🏷️ useId
 
@@ -500,9 +500,9 @@ In the `App` component, where `PasswordField` is used twice, `useId` ensures tha
 
 ## 🕹️ useReducer
 
-`useReducer` is a React hook designed to manage the state of a component using an action-based and reduction-oriented approach, similar to the pattern used in Redux. This hook becomes preferable over **`useState`** when the state of a component is more complex or when state updates depend on the previous state or previous actions.
+`useReducer` is a React hook designed to manage the state of a component using an action-based and reduction-oriented approach, similar to the pattern used in Redux. This hook becomes preferable over `useState` when the state of a component is more complex or when state updates depend on the previous state or previous actions.
 
-**`useReducer`** takes two arguments: a reducing function and the initial state. The reducing function receives two arguments: the current state and an action that describes how the state should change. The reducing function returns the new state.
+`useReducer` takes two arguments: a reducing function and the initial state. The reducing function receives two arguments: the current state and an action that describes how the state should change. The reducing function returns the new state.
 
 **Here’s how the `useReducer` hook is used:**
 

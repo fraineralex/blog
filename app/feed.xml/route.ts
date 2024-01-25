@@ -80,8 +80,10 @@ export async function GET () {
       guid: `${site_url}/${post.slug}`,
       author: 'Frainer Encarnación',
       enclosure: {
-        url: `${site_url}${post.hero}`,
-        type: `image/${post.hero?.split('.').pop() || 'webp'}`
+        url: `${site_url}${post.hero
+          .replace('cover/', 'cover/rss/')
+          .replace('webp', 'png')}`,
+        type: 'png'
       }
     })
   })
