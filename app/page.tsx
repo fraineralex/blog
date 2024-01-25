@@ -7,9 +7,10 @@ import { Eye } from 'lucide-react'
 import Image from 'next/image'
 import { ArticlesByTags } from './components/tags/articles-by-tags'
 import { allPostsDev } from '@/util/monks'
-import { Post, allPosts as allPostsProd } from 'contentlayer/generated'
+import { allPosts as allPostsProd } from 'contentlayer/generated'
 const allPosts: typeof allPostsProd =
   process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
+import '@/styles/home.css'
 
 const redis = Redis.fromEnv()
 
@@ -60,15 +61,15 @@ export default async function BlogPage () {
     <div className='relative'>
       <Navigation />
       <div className='px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-26'>
-        <header className='mx-auto max-w-2xl text-center content'>
-          <h1 className='pb-2 md:pb-3'>
+        <header className='mx-auto max-w-2xl text-center home-header'>
+          <h1 className='font-londrina pb-2 md:pb-3 uppercase font-bold leading-none text-zinc-100'>
             {' '}
             {thereAreFourPosts ? 'Blog Posts' : 'Articles'}
           </h1>
-          <small className='text-zinc-400 md:text-lg leading-relaxed text-sm'>
+          <p className='text-zinc-400 md:text-lg leading-relaxed text-sm'>
             Some of my thoughts on software engineering, web development, and
             life.
-          </small>
+          </p>
         </header>
 
         {thereAreFourPosts && (
