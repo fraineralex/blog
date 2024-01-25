@@ -3,7 +3,7 @@ title: 'Crafting React Hooks: A Comprehensive Guide'
 description: 'In this article, I will reveal in a clear and simplified way how React Hooks can work magic in your projects, just as I would have liked to learn when I discovered them.'
 date: '2024-01-24'
 url: '/'
-hero: '/images/posts/cover/react.webp'
+hero: '/images/posts/cover/crafting-react-hooks.webp'
 tags: ['react', 'javascript', 'typescript']
 published: true
 ---
@@ -13,6 +13,8 @@ In this article, I will reveal in a clear and simplified way how React Hooks can
 ## 🪝 Hooks: The Magic of React
 
 In React, hooks are utilities that allow us to execute arbitrary code in our components based on specific actions. Hooks provide a way to reuse state and side-effect logic in functional components in a simpler and more declarative manner.
+
+> **🚨 Important:** This guide uses `TypeScript` code snippets to illustrate the concepts. If you are not familiar with TypeScript, feel free to ignore the typing in the examples. 😉
 
 ## 🌱 Basic Hooks
 
@@ -81,6 +83,7 @@ export function XFollowCard({ fullName, userName, initialIsFollowing }: Props) {
     </article>
   )
 }
+
 ```
 
 ### 🎬 useEffect
@@ -120,6 +123,7 @@ export function useCatImage({ fact }: { fact: string }) {
 
   return { imageUrl: `${CAT_PREFIX_IMAGE_URL}${imageUrl}` }
 }
+
 ```
 
 **🧹 Cleaning up an effect**
@@ -296,6 +300,7 @@ export function useMovies({ search }: { search: string }) {
 
   return { movies, getMovies, loading, error }
 }
+
 ```
 
 In this case, using **`useState`** for the search term causes unnecessary renderings every time the search term changes. This is where **`useRef`** becomes an efficient solution by allowing us to update **`search`** without affecting the user interface:
@@ -326,6 +331,7 @@ export function useMovies({ search }: { search: string }) {
 
   return { movies, getMovies, loading, error }
 }
+
 ```
 
 With this implementation, **`useRef`** helps manage the value of **`search`** without causing unwanted visual updates, improving efficiency and the user experience.
@@ -358,6 +364,7 @@ export function Counter({ count }: { count: number }) {
     </div>
   )
 }
+
 ```
 
 In this case, the double value is recalculated on every render, even if `count` hasn't changed. `useMemo` solves this by memorizing the result of the calculation only when the dependencies, in this case, the `count` prop, have changed:
@@ -375,6 +382,7 @@ export function Counter({ count }: { count: number }) {
     </div>
   )
 }
+
 ```
 
 With `useMemo`, if the `count` prop hasn't changed, the recalculation of double is avoided, and the previously calculated value is reused. This significantly improves the efficiency of the component, especially in situations where calculations are more resource-intensive.
@@ -404,6 +412,7 @@ function Counter({ count, onIncrement }: Props) {
     </div>
   )
 }
+
 ```
 
 In this case, **`handleIncrement`** is recreated on every render, which is not efficient, especially if **`onIncrement`** and **`count`** haven't changed. **`useCallback`** addresses this by memorizing the function only when the dependencies change:
@@ -423,6 +432,7 @@ export function Counter({ count, onIncrement }: Props) {
     </div>
   )
 }
+
 ```
 
 With **`useCallback`**, if **`count`** or **`onIncrement`** haven't changed, creating a new function is avoided, and the previously calculated function is reused. This improves efficiency and contributes to a more optimal component performance.
@@ -467,6 +477,7 @@ export function PasswordField() {
     </>
   )
 }
+
 ```
 
 In this case, `useId` is used to generate a unique ID (`passwordHintId`) that is assigned to both the `aria-describedby` attribute of the input and the `id` of the paragraph. This ensures that even if `PasswordField` appears multiple times on the screen, the generated IDs will not conflict.
@@ -482,6 +493,7 @@ export default function App() {
     </>
   )
 }
+
 ```
 
 In the `App` component, where `PasswordField` is used twice, `useId` ensures that automatically generated identifiers avoid duplicates and provide a robust solution for assigning unique IDs in repeated contexts. This contributes to improving accessibility and consistency in the application.
