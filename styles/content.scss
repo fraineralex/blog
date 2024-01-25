@@ -151,16 +151,10 @@
 
 .tag {
   h1 {
-    @apply  font-bold leading-none font-londrina text-white;
-
-    font-size: min(max(1rem, 4.25vw), 5rem);
+    font-size: min(max(1rem, 4.25vw), 5rem) !important;
 
     @supports (font-size: clamp(1rem, 4.25vw, 5rem)) {
-      font-size: clamp(1rem, 4.25vw, 5rem);
+      font-size: clamp(1rem, 4.25vw, 5rem) !important;
     }
-  }
-
-  p:not(:first-child) {
-    @apply mt-4 md:mt-6;
   }
 }

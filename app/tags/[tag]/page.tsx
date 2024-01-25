@@ -6,6 +6,7 @@ import { ArticlesByTags } from '../../components/tags/articles-by-tags'
 import { allTags } from '@/util/data'
 import { Metadata, ResolvingMetadata } from 'next'
 import { allPostsDev } from '@/util/monks'
+import '@/styles/home.css'
 import { allPosts as allPostsProd } from 'contentlayer/generated'
 const allPosts: typeof allPostsProd =
   process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
@@ -78,14 +79,14 @@ export default async function BlogPage ({ params }: Props) {
     <div className='relative'>
       <Navigation />
       <div className='px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-26'>
-        <header className='mx-auto max-w-4xl text-center tag'>
-          <h1 className='font-bold text-zinc-100 uppercase'>
+        <header className='mx-auto max-w-4xl text-center home-header tag'>
+          <h1 className='font-bold leading-none font-londrina text-white'>
             Articles about{' '}
             <code className='relative rounded bg-white bg-opacity-25 py-[0.2rem] px-[0.5rem] font-mono font-bold text-white lowercase'>
               {tag?.label || tagName}
             </code>
           </h1>
-          <p className='text-zinc-400 -mt-20 text-xs md:text-lg leading-relaxed'>
+          <p className='text-zinc-400 mt-6 md:mt-6 text-xs md:text-lg leading-relaxed'>
             {sortedPosts.length === 0 ? (
               <>
                 ☹️ There are no articles about{' '}
@@ -101,7 +102,7 @@ export default async function BlogPage ({ params }: Props) {
         </header>
 
         <div className='grid grid-cols-1 gap-4 mx-auto lg:mx-0 md:grid-cols-3'>
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 animate-fade-up-one'>
             {sortedPosts
               .filter((_, i) => i % 3 === 0)
               .map((post, index) => (
@@ -112,7 +113,7 @@ export default async function BlogPage ({ params }: Props) {
                 />
               ))}
           </div>
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 animate-fade-up-two'>
             {sortedPosts
               .filter((_, i) => i % 3 === 1)
               .map((post, index) => (
@@ -123,7 +124,7 @@ export default async function BlogPage ({ params }: Props) {
                 />
               ))}
           </div>
-          <div className='grid grid-cols-1 gap-4'>
+          <div className='grid grid-cols-1 gap-4 animate-fade-up-three'>
             {sortedPosts
               .filter((_, i) => i % 3 === 2)
               .map((post, index) => (
