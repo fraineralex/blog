@@ -1,6 +1,6 @@
 .content {
   h1 {
-    @apply uppercase font-bold leading-none font-londrina text-zinc-100;
+    @apply font-londrina uppercase font-bold leading-none text-zinc-100;
 
     font-size: min(max(3rem, 6.25vw), 7rem);
     text-wrap: balance;

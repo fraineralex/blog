@@ -80,11 +80,11 @@ export default async function PostPage ({ params }: Props) {
       <section className='min-h-screen max-w-6xl md:max-w-5xl mx-auto px-4 md:px-8 text-zinc-300'>
         <Header post={post} views={views} />
         <ReportView slug={post.slug} />
-        <header className='mx-auto w-full text-center content pt-20 md:pt-28'>
+        <header className='mx-auto w-full text-center content pt-20 md:pt-28 home-header'>
           <h1 className='text-white mb-8 w-full'>{post.title}</h1>
         </header>
 
-        <figure>
+        <figure className='cover'>
           <Image
             className='rounded-xl mx-auto w-full'
             style={{ minWidth: '80%' }}

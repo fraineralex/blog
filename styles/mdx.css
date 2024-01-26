@@ -124,3 +124,36 @@
 
   animation-range: entry 5% cover 25%;
 }
+
+@keyframes fade-down-title {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up-cover {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-header {
+  animation: fade-down-title 2s both;
+  @apply font-londrina !important;
+}
+
+.cover {
+  animation: fade-up-cover 2s both;
+}
