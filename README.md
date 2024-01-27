@@ -1,10 +1,10 @@
-# Frainer's Blog 📝
+# 📝 Frainer's Blog
 
 Personal blog developed with Next.js App Router and TypeScript where I write about tech, projects, and whatever else I'm thinking about! Here you will find articles about web development, software engineering, and many more geeky things in the world of programming.
 
 [![blog.png](https://i.postimg.cc/Kv43KPfJ/blog.png)](https://postimg.cc/xcD1hbWz)
 
-## :rocket: Main Technologies ##
+## 📦 Main Technologies ##
 
 <a href="https://typescript.org">
   <img width="50" title="TypeScript" alt="TypeScript Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg">
@@ -38,25 +38,61 @@ Personal blog developed with Next.js App Router and TypeScript where I write abo
   <img width="50" title="Sass" alt="Sass Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg">
 </a> &#xa0; &#xa0;
 
+<a href="">
+  <img width="50" title="CSS" alt="CSS Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg">
+</a> &#xa0; &#xa0;
 
 ###
 
-## ✨ Requirements ##
+## 🚀 Key Features
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node.js](https://nodejs.org) v18 or heigher installed.
+- **Responsive Design:** Adapts seamlessly to various screen sizes.
 
-## 🍿 How to Run? ##
+- **Animations:** Features subtle entry animations and scroll-based animations, all crafted entirely with CSS.
+
+- **RSS Feed:** Offers a comprehensive feed for subscription with any RSS reader to keep you updated.
+
+- **Search Functionality:** Includes a search feature to easily find any article by title, description, tags, or content.
+
+- **Tag Filtering:** Allows filtering articles based on their corresponding tags.
+
+- **Newsletter:** Also provides the option to subscribe to the newsletter and receive articles by email upon publication.
+
+- **Article Visits:** Records the number of visits each article receives in a database and displays the count.
+
+
+## :checkered_flag: Requirements ##
+
+Before starting, you need to have [Git](https://git-scm.com) and [Node.js](https://nodejs.org) v18 or heigher installed.
+## 🍿 How to Run Locally? ##
 
 ```bash
 # Clone this project
     $ git clone https://github.com/fraineralex/blog.git
 # Access
     $ cd blog
+```
+> *Create a `.env` file similar to [`.env.example`](https://github.com/fraineralex/blog/blob/main/.env.example).*
+
+**Then**
+
+```bash
 # Install dependencies
     $ pnpm install
 # Run the project
-    $ pnpm run dev
+    $ pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> *Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.*
+
+## 💡 Improvements
+- **Table of Contents Section:** Introduce a dedicated section on the reading page to display the table of contents.
+
+- **Performance Boost:** Enhance overall performance, aiming to surpass the current 59% rating.
+
+- **Expand Content Categories:** Add more sections such as podcasts, books, and tools that I use.
+
+- **Spanish Translation:** Include a Spanish translation for the entire site, in conjunction with the articles.
+
+- **Light/Dark Mode Switch:** Provide the ability to switch between light and dark modes for a personalized reading experience.
 
