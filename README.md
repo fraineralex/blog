@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frainer's Blog 📝
 
-## Getting Started
+Personal blog developed with Next.js App Router and TypeScript where I write about tech, projects, and whatever else I'm thinking about! Here you will find articles about web development, software engineering, and many more geeky things in the world of programming.
 
-First, run the development server:
+[![blog.png](https://i.postimg.cc/Kv43KPfJ/blog.png)](https://postimg.cc/xcD1hbWz)
+
+## :rocket: Main Technologies ##
+
+<a href="https://typescript.org">
+  <img width="50" title="TypeScript" alt="TypeScript Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg">
+</a> &#xa0; &#xa0;
+
+<a href="https://www.react.org">
+  <img width="50" title="React" alt="React Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg">
+</a> &#xa0; &#xa0;
+
+<a href="https://nextjs.org">
+  <img width="50" title="Next.js" alt="Next.js Logo" src="https://nextjs.org/favicon.ico">
+</a> &#xa0; &#xa0;
+
+<a href="https://tailwind.org">
+  <img width="50" title="Tailwind" alt="Tailwind Logo" src="https://camo.githubusercontent.com/0568e2de313626b2bd9b96f326941b012d45e9a4db1a23aa78bd8036207e57f8/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f7461696c77696e646373732f7461696c77696e646373732d69636f6e2e737667">
+</a> &#xa0; &#xa0;
+
+<a href="https://contentlayer.dev">
+  <img width="50" title="ContentLayer" alt="Contentlayer Logo" src="https://contentlayer.dev/favicon/favicon-196x196.png">
+</a> &#xa0; &#xa0;
+
+<a href="https://upstash.com">
+  <img width="50" title="Upstash" alt="Upstash Logo" src="https://upstash.com/icons/favicon-32x32.png">
+</a> &#xa0; &#xa0;
+
+<a href="https://redis.io">
+  <img width="50" title="Redis" alt="Redis Logo" src="https://redis.io/images/favicons/favicon-32x32.png">
+</a> &#xa0; &#xa0;
+
+<a href="https://sass-lang.com/">
+  <img width="50" title="Sass" alt="Sass Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg">
+</a> &#xa0; &#xa0;
+
+
+###
+
+## ✨ Requirements ##
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node.js](https://nodejs.org) v18 or heigher installed.
+
+## 🍿 How to Run? ##
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone this project
+    $ git clone https://github.com/fraineralex/blog.git
+# Access
+    $ cd blog
+# Install dependencies
+    $ pnpm install
+# Run the project
+    $ pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`@next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
