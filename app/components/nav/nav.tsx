@@ -1,8 +1,7 @@
 'use client'
-import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import React, { useEffect, useRef, useState } from 'react'
-import { SearchPosts } from '../search/search-posts'
+import React, { useEffect, useRef, useState, lazy } from 'react'
+const SearchPosts = lazy(() => import('../search/search-posts'))
 import { ProfileLink } from './profile-link'
 import { Mails } from 'lucide-react'
 
@@ -31,7 +30,7 @@ export const Navigation: React.FC = () => {
       >
         <div className='container flex flex-row-reverse items-center justify-between p-6 mx-auto'>
           <div className='flex justify-between gap-8 pr-5'>
-              <SearchPosts />
+            <SearchPosts />
             <Link
               href='https://fraineralex.substack.com/'
               className=' text-slate-400 hover:text-slate-100 hover:scale-110'
@@ -57,3 +56,5 @@ export const Navigation: React.FC = () => {
     </header>
   )
 }
+
+export default Navigation

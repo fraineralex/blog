@@ -1,27 +1,17 @@
 import { notFound } from 'next/navigation'
 import { Mdx } from '@/app/components/articles/mdx'
-import { Header } from '../components/content/header'
+import dynamic from 'next/dynamic'
+const Header = dynamic(() => import('../components/content/header'))
 import '@/styles/mdx.css'
 import { ReportView } from '../components/content/view'
 import { Redis } from '@upstash/redis'
 import Image from 'next/image'
 import { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link'
-import Subscribe from '../components/footer/subscribe'
-import { Post } from 'contentlayer/generated'
+const Subscribe = dynamic(() => import('../components/footer/subscribe'))
 import { allTags } from '@/util/data'
-
-let allPosts: Array<Post>
-
-if (process.env.NODE_ENV === 'development') {
-  import('../../util/monks').then(module => {
-    allPosts = module.allPostsDev
-  })
-} else {
-  import('contentlayer/generated').then(module => {
-    allPosts = module.allPosts
-  })
-}
+import { allPosts } from 'contentlayer/generated'
+//import allPosts from '@/util/monks'
 
 export const revalidate = 60
 const redis = Redis.fromEnv()

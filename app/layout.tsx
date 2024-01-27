@@ -1,9 +1,8 @@
-import '../global.css'
+import '../styles/main.scss'
 import { Inter } from 'next/font/google'
 import LocalFont from 'next/font/local'
 import { Metadata } from 'next'
 import { Analytics } from './components/articles/analytics'
-import '../styles/main.scss'
 import Footer from './components/footer/footer'
 import React from 'react'
 
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1
-    }
+    },
   },
   twitter: {
     title: "Frainer's Blog 📝",

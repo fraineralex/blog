@@ -1,9 +1,9 @@
+import '@/styles/tags.css'
 import Link from 'next/link'
 import { ReactIcon } from '../common/svg-icons'
 import Image from 'next/image'
 import { displayTags, allTags } from '@/util/data'
 import React from 'react'
-import '@/styles/tags.css'
 
 export function ArticlesByTags ({
   displayAllTags
@@ -13,7 +13,7 @@ export function ArticlesByTags ({
   const tags = displayAllTags ? allTags : displayTags
   return (
     <section className='lg:mx-0 w-full animate-tags-section'>
-      <h2 className='font-londrina text-3xl font-bold tracking-wide text-zinc-500 sm:text-4xl pb-5'>
+      <h2 className='font-londrina text-3xl font-bold tracking-wide text-zinc-400 sm:text-4xl pb-5'>
         View posts by tag
       </h2>
       <div className='w-full h-px bg-zinc-700' />
@@ -43,6 +43,8 @@ export function ArticlesByTags ({
           ))}
       </article>
       <iframe
+        rel='preconnect'
+        title='Subscribe to my newsletter'
         src='https://fraineralex.substack.com/embed'
         width='480'
         height='120'
@@ -51,3 +53,5 @@ export function ArticlesByTags ({
     </section>
   )
 }
+
+export default ArticlesByTags

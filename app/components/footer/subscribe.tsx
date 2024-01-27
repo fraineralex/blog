@@ -8,6 +8,7 @@ export default function Subscribe () {
         Subscribe to the newsletter
       </h3>
       <iframe
+        title='Subscribe to my newsletter'
         src='https://fraineralex.substack.com/embed'
         width='100%'
         height='150'

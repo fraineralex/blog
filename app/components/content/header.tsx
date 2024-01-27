@@ -1,6 +1,5 @@
 'use client'
 import { ArrowLeft, Eye, Share2 } from 'lucide-react'
-import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import { SearchPosts } from '../search/search-posts'
 import { ProfileLink } from '../nav/profile-link'
@@ -107,3 +106,5 @@ export const Header: React.FC<Props> = ({ post, views }) => {
     </header>
   )
 }
+
+export default Header

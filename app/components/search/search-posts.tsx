@@ -69,3 +69,5 @@ export function SearchPosts ({ className }: { className?: string }) {
     </>
   )
 }
+
+export default SearchPosts

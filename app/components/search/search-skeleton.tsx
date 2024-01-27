@@ -1,8 +1,6 @@
-import React from 'react'
-
-export function SearchSkeleton () {
+export default function SearchSkeleton () {
   return (
-    <div className='animate-pulse rounded'>
+    <div className='animate-pulse rounded w-full'>
       <article className='grid grid-cols-6 border-b border-slate-600 mx-8'>
         <aside className='border-b py-6 border-slate-800 bg-slate-800 rounded col-span-4'>
           <p className='mb-7 h-6 w-1/2 rounded-lg bg-slate-700'></p>

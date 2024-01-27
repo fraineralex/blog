@@ -1,7 +1,5 @@
-import { allPostsDev } from '@/util/monks'
-import { allPosts as allPostsProd } from 'contentlayer/generated'
-const allPosts: typeof allPostsProd =
-  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
+import { allPosts } from 'contentlayer/generated'
+//import allPosts from '@/util/monks'
 
 export default function Page () {
   const postsJSON = JSON.stringify(allPosts, null, 2)

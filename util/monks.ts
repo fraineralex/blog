@@ -84,3 +84,5 @@ export const allPostsDev: Array<Post> = [
     readTime: '7'
   }
 ]
+
+export default allPostsDev

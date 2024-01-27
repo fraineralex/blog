@@ -1,16 +1,17 @@
+import '@/styles/home.css'
 import Link from 'next/link'
 import React from 'react'
-import { Navigation } from './components/nav/nav'
+import dynamic from 'next/dynamic'
+const Navigation = dynamic(() => import('./components/nav/nav'))
 import { Article } from './components/articles/article'
 import { Redis } from '@upstash/redis'
 import { Eye } from 'lucide-react'
 import Image from 'next/image'
-import { ArticlesByTags } from './components/tags/articles-by-tags'
-import { allPostsDev } from '@/util/monks'
-import { allPosts as allPostsProd } from 'contentlayer/generated'
-const allPosts: typeof allPostsProd =
-  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
-import '@/styles/home.css'
+const ArticlesByTags = dynamic(
+  () => import('./components/tags/articles-by-tags')
+)
+import { allPosts } from 'contentlayer/generated'
+//import allPosts from '@/util/monks'
 
 const redis = Redis.fromEnv()
 

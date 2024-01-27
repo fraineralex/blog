@@ -5,11 +5,9 @@ import { Redis } from '@upstash/redis'
 import { ArticlesByTags } from '../../components/tags/articles-by-tags'
 import { allTags } from '@/util/data'
 import { Metadata, ResolvingMetadata } from 'next'
-import { allPostsDev } from '@/util/monks'
 import '@/styles/home.css'
-import { allPosts as allPostsProd } from 'contentlayer/generated'
-const allPosts: typeof allPostsProd =
-  process.env.NODE_ENV === 'development' ? allPostsDev : allPostsProd
+import { allPosts } from 'contentlayer/generated'
+//import allPosts from '@/util/monks'
 
 const redis = Redis.fromEnv()
 
