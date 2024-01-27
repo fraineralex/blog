@@ -88,7 +88,7 @@ Before starting, you need to have [Git](https://git-scm.com) and [Node.js](https
 ## 💡 Improvements
 - **Table of Contents Section:** Introduce a dedicated section on the reading page to display the table of contents.
 
-- **Performance Boost:** Enhance overall performance, aiming to surpass the current 59% rating.
+- **Performance Boost:** Enhance overall performance, aiming to surpass the current 66% rating in the home page.
 
 - **Expand Content Categories:** Add more sections such as podcasts, books, and tools that I use.
 
