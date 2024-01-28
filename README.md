@@ -96,3 +96,7 @@ Before starting, you need to have [Git](https://git-scm.com) and [Node.js](https
 
 - **Light/Dark Mode Switch:** Provide the ability to switch between light and dark modes for a personalized reading experience.
 
+## 🤝 Contributions
+
+Thank you for exploring my blog! If you find the structure or features useful, feel free to use the template for your own project. Moreover, I invite you to contribute to the development! If you have ideas, corrections, or improvements, open an issue or send a pull request. Your collaboration is welcome and appreciated! 🚀
+
