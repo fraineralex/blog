@@ -35,7 +35,7 @@
 }
 
 .animate-tags-section {
-  && h2,
+  h2,
   div {
     view-timeline-name: --reveling-section;
     view-timeline-axis: block;
@@ -46,7 +46,7 @@
     animation-range: entry 5% cover 20%;
   }
 
-  && a {
+  a {
     view-timeline-name: --reveling-tags;
     view-timeline-axis: block;
 
@@ -56,7 +56,7 @@
     animation-range: entry 5% cover 30%;
   }
 
-  && iframe {
+  iframe {
     view-timeline-name: --reveling-iframe;
     view-timeline-axis: block;
 

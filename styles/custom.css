@@ -1,9 +1,8 @@
 .blog-tags a {
   @apply font-bold underline text-hot-pink;
-
-  &:hover {
-    @apply text-black;
-  }
+}
+.blog-tags a:hover {
+  @apply text-black;
 }
 
 #searchBox {
@@ -19,14 +18,11 @@
   color: #fd2d78 !important;
 }
 
-.blog {  
-  ::-moz-selection {
-    color: white;
-    background: #fd2d78;
-  }
-  
-  ::selection {
-    color: white;
-    background: #fd2d78;
-  }
+.blog ::-moz-selection {
+  color: white;
+  background: #fd2d78;
+}
+.blog ::selection {
+  color: white;
+  background: #fd2d78;
 }

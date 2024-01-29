@@ -1,4 +1,4 @@
-import '../styles/main.scss'
+import '../styles/main.css'
 import { Inter } from 'next/font/google'
 import LocalFont from 'next/font/local'
 import { Metadata } from 'next'
@@ -82,11 +82,11 @@ export default function RootLayout ({
   return (
     <html
       lang='en'
-      className={[
+      className={`blog ${[
         inter.variable,
         calSans.variable,
         londrinaSolid.variable
-      ].join(' ')}
+      ].join(' ')}`}
     >
       <head>
         <Analytics />

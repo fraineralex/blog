@@ -9,7 +9,7 @@
 }
 
 div {
-  && a {
+  a {
     view-timeline-name: --reveling-links;
     view-timeline-axis: block;
 

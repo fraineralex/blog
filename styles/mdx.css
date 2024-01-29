@@ -76,7 +76,7 @@
 }
 
 .content {
-  && img {
+  & img {
     view-timeline-name: --reveling-image;
     view-timeline-axis: block;
 
@@ -86,7 +86,7 @@
     animation-range: entry 5% cover 30%;
   }
 
-  && pre {
+  & pre {
     view-timeline-name: --reveling-code;
     view-timeline-axis: block;
 
@@ -96,7 +96,7 @@
     animation-range: entry 5% cover 20%;
   }
 
-  && p,
+  & p,
   h2,
   h3,
   h4,
