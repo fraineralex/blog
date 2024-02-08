@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next'
 
 export default function manifest (): MetadataRoute.Manifest {
   return {
-    name: "Frainer' Blog",
-    short_name: "Frainer' Blog",
+    name: "Frainer's Blog",
+    short_name: "Frainer's Blog",
     description:
       "I'm Frainer Encarnación, a Full Stack Developer in Dominican Republic. I write about tech, projects and whatever else I'm thinking about! Here you will find articles about web development, software engineering, and many more geeky things in the world of programming.",
     start_url: '/',

@@ -5,7 +5,7 @@ export default function Loading () {
   return (
     <div className='relative'>
       <header>
-        <div className={`fixed inset-x-0 top-0 z-50`}>
+        <div className='fixed inset-x-0 top-0 z-50'>
           <div className='container flex flex-row-reverse items-center justify-between p-6 mx-auto'>
             <div className='flex justify-between gap-8 pr-5'>
               <Search className='h-6 w-6 text-gray-700' />

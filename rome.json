@@ -2,7 +2,8 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "lint/style/noNonNullAssertion": "off"
     },
     "ignore": ["node_modules", ".next", "dist"]
   },

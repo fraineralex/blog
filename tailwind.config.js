@@ -29,7 +29,7 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				londrina: ["var(--font-londrina)", '"Londrina Solid"', ...defaultTheme.fontFamily.sans],
+				londrina: ["var(--font-londrina)", '"Londrina Solid"', "var(--font-inter)", "var(--font-calsans)", ...defaultTheme.fontFamily.sans],
 				sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
 				calsans: ["var(--font-calsans)", ...defaultTheme.fontFamily.sans],
 			},
@@ -121,7 +121,7 @@ module.exports = {
       '-90': '-90deg',
       '-45': '-45deg',
       '-10': '-10deg',
-      '-9': '-9deg',
+      '-rotate9': '-9deg',
       '-8': '-8deg',
       '-7': '-7deg',
       '-6': '-6deg',

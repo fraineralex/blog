@@ -17,14 +17,17 @@ const redis = Redis.fromEnv()
 
 export const revalidate = 60
 export default async function BlogPage () {
-  const views = (
-    await redis.mget<number[]>(
-      ...allPosts.map(post => ['pageviews', 'posts', post?.slug].join(':'))
-    )
-  ).reduce((acc, v, i) => {
-    acc[allPosts[i].slug] = v ?? 0
-    return acc
-  }, {} as Record<string, number>)
+  let views: Record<string, number> = {}
+  if (allPosts.length > 0) {
+    views = (
+      await redis.mget<number[]>(
+        ...allPosts.map(post => ['pageviews', 'posts', post?.slug].join(':'))
+      )
+    ).reduce((acc, v, i) => {
+      acc[allPosts[i].slug] = v ?? 0
+      return acc
+    }, {} as Record<string, number>)
+  }
 
   const thereAreFourPosts = allPosts.length >= 4
   let sorted = allPosts
@@ -67,9 +70,9 @@ export default async function BlogPage () {
             {' '}
             {thereAreFourPosts ? 'Blog Posts' : 'Articles'}
           </h1>
-          <p className='text-zinc-400 md:text-lg leading-relaxed text-sm'>
-            Some of my thoughts on software engineering, web development, and
-            life.
+          <p className='text-zinc-400 md:text-lg leading-relaxed text-sm font-normal'>
+            Some of my learnings, tricks and thoughts on software engineering,
+            programming and tech.
           </p>
         </header>
 

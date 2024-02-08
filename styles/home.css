@@ -26,5 +26,6 @@
 
   p {
     text-wrap: pretty;
+    font-weight: normal !important;
   }
 }
