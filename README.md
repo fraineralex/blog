@@ -38,6 +38,10 @@ Personal blog developed with Next.js App Router and TypeScript where I write abo
   <img width="50" title="CSS" alt="CSS Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg">
 </a> &#xa0; &#xa0;
 
+<a href="https:nodejs.org">
+  <img width="43" title="Node.js" alt="Node.js Logo" src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png">
+</a> &#xa0; &#xa0;
+
 ###
 
 ## 🚀 Key Features
