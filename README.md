@@ -30,10 +30,6 @@ Personal blog developed with Next.js App Router and TypeScript where I write abo
   <img width="50" title="Upstash" alt="Upstash Logo" src="https://upstash.com/icons/favicon-32x32.png">
 </a> &#xa0; &#xa0;
 
-<a href="https://redis.io">
-  <img width="50" title="Redis" alt="Redis Logo" src="https://redis.io/images/favicons/favicon-32x32.png">
-</a> &#xa0; &#xa0;
-
 <a href="">
   <img width="50" title="CSS" alt="CSS Logo" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg">
 </a> &#xa0; &#xa0;
